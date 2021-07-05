@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>15. 가운데 문자 출력</title>
+</head>
+
+<body>
+    <script>
+        // substring(a, b)  =>  a번 인덱스부터 b-1번 인덱스까지 추출.
+        // substr(a, b) => a번 인덱스부터 b개의 요소를 추출.
+        function solution(s) {
+            let answer = '';
+            let mid = parseInt(s.length / 2);
+
+            if (s.length % 2 !== 0) answer += s.substr(mid, 1);
+            else answer += s.substring(mid - 1, mid + 1);
+            return answer;
+        }
+
+        console.log(solution("study"));
+        console.log(solution("good"));
+    </script>
+</body>
+
+</html>
