@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3. 연필 개수</title>
+</head>
+
+<body>
+    <script>
+        // parseInt( string, n )  =>  string을 n진법일 때의 값으로 바꿉니다.
+        // n은 옵션으로 2부터 36까지 입력할 수 있습니다. 
+        // 입력하지 않으면 10으로 처리합니다.
+        // Math.ceil(n)  =>  n을 올림
+        function solution(n) {
+            let answer = Math.ceil(n / 12);
+            return answer;
+        }
+
+        console.log(solution(25));
+        console.log(solution(178));
+    </script>
+</body>
+
+</html>
