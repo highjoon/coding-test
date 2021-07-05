@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2. 삼각형 판별하기</title>
+</head>
+
+<body>
+    <script>
+        // 세 변의 길이를 줬을 때 길이가 가장 긴 변의 길이는 다른 두 변 길이의 합보다 작아야 삼각형을 그릴 수 있어요.
+        function solution(a, b, c) {
+            let max;
+            let sum = a + b + c;
+            let answer = "YES";
+
+            if (a > b) max = a;
+            else max = b;
+            if (c > max) max = c;
+
+            if ((sum - max) < max) answer = "NO";
+            return answer;
+        }
+
+        console.log(solution(6, 7, 11));
+        console.log(solution(13, 33, 17));
+    </script>
+</body>
+
+</html>
