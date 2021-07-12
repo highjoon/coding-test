@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3. 크레인 인형뽑기(카카오)</title>
+</head>
+
+<body>
+    <script>
+        function solution(board, moves) {
+            let answer = 0;
+            let stack = [];
+            moves.forEach(pos => {
+                // moves의 각 인자를 pos 매개변수로 받아옴.
+                // 각 pos 매개변수에 대해 다음과 같은 콜백 실행.
+                for (let i = 0; i < board.length; i++) {
+                    if (board[i][pos - 1] !== 0) {
+                        // 인형이 있는 곳까지 크레인을 내려서
+                        let tmp = board[i][pos - 1];
+                        // 인형을 끄집어낸다.
+                        board[i][pos - 1] = 0;
+                        // 인형을 끄집어냈으니 인형 바구니에는 해당 인형이 더이상 없다.
+                        if (tmp === stack[stack.length - 1]) {
+                            // 집어넣는데, 만약에 stack에 이미 동일한 인형이 있으면,
+                            stack.pop();
+                            // 인형이 없어진다.
+                            answer += 2;
+                            // 꺼낸 인형과 stack에 있는 인형 2개가 사라지므로 +2.
+                        }
+                        else stack.push(tmp);
+                        // stack에 동일한 인형이 없으면 그대로 집어 넣는다.
+                        break;
+                        // 하나의 pos 매개변수에 하나의 콜백만이 실행되어야하므로, 
+                        // 모든 과정이 끝나면 break하여 해당 pos 매개변수의 콜백 종료.
+                    }
+                }
+            });
+            return answer;
+        }
+
+        let a = [
+            [0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 3],
+            [0, 2, 5, 0, 1],
+            [4, 2, 4, 4, 2],
+            [3, 5, 1, 3, 1]];
+
+        let b = [1, 5, 3, 5, 1, 2, 1, 4];
+        console.log(solution(a, b));
+    </script>
+</body>
+
+</html>
