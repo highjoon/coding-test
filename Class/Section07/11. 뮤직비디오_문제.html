@@ -13,10 +13,12 @@
                 if (sum + x > capacity) {
                     cnt++;
                     sum = x;
-                } else sum += x;
+                }
+                else sum += x;
             }
             return cnt;
         }
+
         function solution(m, songs) {
             let answer = 0;
             let lt = Math.max(...songs);
