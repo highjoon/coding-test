@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4. 후위식 연산</title>
+</head>
+
+<body>
+    <script>
+        // 숫자 만나면 무조건 stack에 push.
+        // 연산자를 만나면 stack에서 2개의 숫자를 pop하고,
+        // (먼저 꺼낸 숫자) (연산자) (다음에 꺼낸 숫자) 하여 다시 stack에 push.
+        // 이후 stack의 0번 인덱스 (모든 연산의 결과)를 answer로 반환.
+        function solution(s) {
+            let answer;
+            let stack = [];
+            for (let x of s) {
+                if (!isNaN(x)) stack.push(Number(x));
+                else {
+                    let rt = stack.pop();
+                    let lt = stack.pop();
+                    if (x === '+') stack.push(lt + rt);
+                    else if (x === '-') stack.push(lt - rt);
+                    else if (x === '*') stack.push(lt * rt);
+                    else if (x === '/') stack.push(lt / rt);
+                }
+            }
+            answer = stack[0];
+            return answer;
+        }
+
+        let str = "352+*9-";
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>

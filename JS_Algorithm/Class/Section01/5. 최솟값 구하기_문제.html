@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5. 최솟값 구하기</title>
+</head>
+
+<body>
+    <script>
+        function solution(arr) {
+            let answer = Math.min(...arr);
+            return answer;
+
+            /*
+            let min = Number.MIN_SAFE_INTEGER;
+            for (let i = 0; i < arr.length; i++) {
+                if (min > arr[i]) min = arr[i];
+            }
+            min = answer;
+            */
+        }
+
+        let arr = [5, 7, 12, 3, 2, 9, 11];
+        // let arr=[5, 3, 7, 11, 1, 15, 17];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
