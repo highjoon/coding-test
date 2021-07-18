@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>베스트앨범</title>
+</head>
+
+<body>
+    <script>
+        function solution(genres, plays) {
+            let answer = [], tmp = new Map();
+
+            for (let i = 0; i < genres.length; i++) {
+                if (tmp.has(genres[i])) tmp.set(genres[i], tmp.get(genres[i]) + plays[i]);
+                else tmp.set(genres[i], plays[i]);
+            }
+
+            let sH = new Map([...tmp.entries()].sort((a, b) => b[1] - a[1]));
+
+            for (let [key, val] of sH) {
+                let arr = [];
+                for (let i = 0; i < genres.length; i++) {
+                    if (genres[i] === key) arr.push(plays[i]);
+                }
+                arr.sort((a, b) => b - a);
+                if (arr.length === 1) answer.push(plays.indexOf(arr[0]))
+                else {
+                    answer.push(plays.indexOf(arr[0]));
+                    answer.push(plays.indexOf(arr[1]));
+                }
+            }
+            return answer;
+        }
+
+        let genres = ["classic", "pop", "classic", "classic", "pop"];
+        let plays = [500, 600, 150, 800, 2500];
+        let genres1 = ["classic", "pop", "classic", "classic", "pop", "Rock", "Rock"];
+        let plays1 = [500, 600, 150, 800, 2500, 1000, 1000];
+        let genres2 = ["classic"];
+        let plays2 = [500];
+        // console.log(solution(genres, plays));
+        // console.log(solution(genres1, plays1));
+        console.log(solution(genres2, plays2));
+    </script>
+</body>
+
+</html>
