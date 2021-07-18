@@ -8,16 +8,18 @@
 <body>
     <script>
         function solution(par, com) {
+            let answer = '';
             let sH = new Map();
-            for (let x of com) {
+            for (let x of par) {
                 if (sH.has(x)) sH.set(x, sH.get(x) + 1);
                 else sH.set(x, 1);
             };
-            for (let k of par) {
-                if (!sH.has(k) || sH.get(k) <= 0) return k;
-                sH.set(k, sH.get(k) - 1);
-            };
-            return 'Everyone Complete';
+            for (let k of com) {
+                if (sH.has(k)) sH.set(k, sH.get(k) - 1);
+                if (sH.get(k) === 0) sH.delete(k);
+            }
+            for (let [key, val] of sH) answer = key;
+            return answer;
         }
 
         let participant = ["leo", "kiki", "eden"];
