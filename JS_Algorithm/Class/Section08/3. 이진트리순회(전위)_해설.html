@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3. 이진트리순회(전위)</title>
+</head>
+
+<body>
+    <script>
+        function solution(n) {          // 전위순회
+            let answer;
+            function DFS(n) {
+                if (n > 7) return;
+                else {
+                    console.log(n);     // 부모출력
+                    DFS(n * 2);         // 왼쪽 이동
+                    DFS(n * 2 + 1);     // 오른쪽 이동
+                }
+            }
+            DFS(n);
+            return answer;
+        }
+
+        console.log(solution(1));
+    </script>
+</body>
+
+</html>
