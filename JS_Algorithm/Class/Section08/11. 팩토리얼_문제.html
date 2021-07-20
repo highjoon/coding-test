@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>11. 팩토리얼</title>
+</head>
+
+<body>
+    <script>
+        function solution(n) {
+            let answer = 0;
+            function DFS(L) {
+                if (L === 1) return 1;
+                else return L * DFS(L - 1);
+            }
+            answer = DFS(n);
+            return answer;
+        }
+
+        console.log(solution(5));
+    </script>
+</body>
+
+</html>
