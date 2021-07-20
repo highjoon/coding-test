@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>하샤드수</title>
+</head>
+
+<body>
+    <script>
+        function solution(arr) {
+            let answer = arr.reduce((a, b) => a + b, 0) / arr.length;
+            return answer;
+        }
+
+        let arr1 = [1, 2, 3, 4], arr2 = [5, 5];
+        console.log(solution(arr1));
+        console.log(solution(arr2));
+    </script>
+</body>
+
+</html>
