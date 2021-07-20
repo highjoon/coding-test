@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>하샤드수</title>
+</head>
+
+<body>
+    <script>
+        function solution(x) {
+            let answer = false;
+            let sum = String(x).split('').reduce((a, b) => Number(a) + Number(b), 0);
+            return x % sum === 0 ? true : answer;
+        }
+
+        let arr1 = 10, arr2 = 12, arr3 = 11, arr4 = 13;
+        console.log(solution(arr1));
+        console.log(solution(arr2));
+        console.log(solution(arr3));
+        console.log(solution(arr4));
+    </script>
+</body>
+
+</html>
