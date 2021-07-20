@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>x만큼 간격이 있는 n개의 숫자</title>
+</head>
+
+<body>
+    <script>
+        function solution(x, n) {
+            let answer = [], tmp = 0;
+            for (let i = 0; i < n; i++) answer.push(tmp += x);
+            return answer;
+        }
+
+        let x1 = 2, n1 = 5;
+        let x2 = 4, n2 = 3;
+        let x3 = -4, n3 = 2;
+        console.log(solution(x1, n1));
+        console.log(solution(x2, n2));
+        console.log(solution(x3, n3));
+    </script>
+</body>
+
+</html>
