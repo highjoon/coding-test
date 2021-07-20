@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>핸드폰 번호 가리기</title>
+</head>
+
+<body>
+    <script>
+        function solution(phone_number) {
+            let answer, str = '';
+            let n = phone_number.slice(0, -4).length;;
+            let back = phone_number.slice(-4).toString();
+            for (let i = 0; i < n; i++) str += '*';
+            answer = str + back;
+            return answer;
+        }
+
+        let phone1 = "01033334444";
+        let phone2 = "027778888";
+        let phone3 = "1111";
+        console.log(solution(phone1));
+        console.log(solution(phone2));
+        console.log(solution(phone3));
+    </script>
+</body>
+
+</html>
