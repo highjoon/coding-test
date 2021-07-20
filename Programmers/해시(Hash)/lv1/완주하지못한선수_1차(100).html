@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>완주하지못한선수</title>
+</head>
+
+<body>
+    <script>
+        function solution(par, com) {
+            let answer = '';
+            let sH = new Map();
+            for (let x of par) {
+                if (sH.has(x)) sH.set(x, sH.get(x) + 1);
+                else sH.set(x, 1);
+            };
+            for (let k of com) {
+                if (sH.has(k)) sH.set(k, sH.get(k) - 1);
+                if (sH.get(k) === 0) sH.delete(k);
+            }
+            for (let [key, val] of sH) answer = key;
+            return answer;
+        }
+
+        let participant = ["leo", "kiki", "eden"];
+        let completion = ["eden", "kiki"];
+        let participant1 = ["marina", "josipa", "nikola", "vinko", "filipa"];
+        let completion1 = ["josipa", "filipa", "marina", "nikola"];
+        let participant2 = ["mislav", "stanko", "mislav", "ana"];
+        let completion2 = ["stanko", "ana", "mislav"];
+        console.log(solution(participant, completion));
+        console.log(solution(participant1, completion1));
+        console.log(solution(participant2, completion2));
+    </script>
+</body>
+
+</html>
