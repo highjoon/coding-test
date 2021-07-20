@@ -13,9 +13,7 @@
             pt.sort((a, b) => b - a);
             function DFS(L, s_sum, t_sum) {
                 if (t_sum > m) return;
-                if (L === ps.length) {
-                    answer = Math.max(answer, s_sum);
-                }
+                if (L === ps.length) answer = Math.max(answer, s_sum);
                 else {
                     DFS(L + 1, s_sum + ps[L], t_sum + pt[L]);
                     DFS(L + 1, s_sum, t_sum);
