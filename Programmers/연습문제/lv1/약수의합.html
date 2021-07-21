@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>약수의합</title>
+  </head>
+
+  <body>
+    <script>
+      function solution(n) {
+        var answer = 0;
+        for (let i = 1; i <= n; i++) {
+          if (n % i === 0) answer += i;
+        }
+        return answer;
+      }
+
+      let n1 = 12,
+        n2 = 5;
+      console.log(solution(n1));
+      console.log(solution(n2));
+    </script>
+  </body>
+</html>
