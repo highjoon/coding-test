@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>가장큰수</title>
+</head>
+
+<body>
+    <script>
+        function solution(numbers) {
+            let answer = numbers
+                .map(x => String(x))
+                .sort((a, b) => (b + a) - (a + b))
+                .join('');
+            if (answer[0] === '0') answer = '0';
+            return answer;
+        }
+
+        let n1 = [6, 10, 2]
+        let n2 = [3, 30, 34, 5, 9]
+
+        console.log(solution(n1));
+        console.log(solution(n2));
+    </script>
+</body>
+
+</html>
