@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>자연수 뒤집어 배열로 만들기</title>
+  </head>
+
+  <body>
+    <script>
+      // 숫자를 내림차순하는것이 아니라,
+      // 단순히 자리를 역으로 바꾸는 것.
+      // sort(a,b) => b-a  는 크기를 기준으로 내림차순하는 메서드.
+      // reverse() 메서드는 그냥 자리를 역으로 바꾸는 메서드.
+      function solution(n) {
+        let answer = n
+          .toString()
+          .split("")
+          .reverse()
+          .map((x) => (x = parseInt(x)));
+        return answer;
+      }
+
+      let n = 118372;
+      console.log(solution(n));
+    </script>
+  </body>
+</html>
