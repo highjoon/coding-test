@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>정수 제곱근 판별</title>
+</head>
+
+<body>
+    <script>
+        function solution(n) {
+                let answer = 0;
+                let s = Math.sqrt(n);
+                if (Number.isInteger(s)) answer = Math.pow(s + 1, 2)
+                else return -1;
+                return answer;
+            }
+
+        let n1 = 121, n2 = 3;
+        console.log(solution(n1));
+        console.log(solution(n2));
+    </script>
+</body>
+
+</html>
