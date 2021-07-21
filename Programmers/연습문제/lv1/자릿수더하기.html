@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>자릿수 더하기</title>
+  </head>
+
+  <body>
+    <script>
+      function solution(n) {
+        let answer = String(n)
+          .split("")
+          .map((x) => (x = parseInt(x)))
+          .reduce((a, b) => a + b, 0);
+        return answer;
+      }
+
+      let n1 = 123,
+        n2 = 987;
+      console.log(solution(n1));
+      console.log(solution(n2));
+    </script>
+  </body>
+</html>
