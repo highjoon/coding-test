@@ -1,24 +1,22 @@
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>11. 팩토리얼</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function solution(n) {
-            let answer;
-            function DFS(n) {
-                if (n === 1) return 1;
-                else return n * DFS(n - 1);
-            }
-            answer = DFS(n);
-            return answer;
+      function solution(n) {
+        let answer;
+        function DFS(n) {
+          if (n === 1) return 1;
+          else return n * DFS(n - 1);
         }
+        answer = DFS(n);
+        return answer;
+      }
 
-        console.log(solution(5));
+      console.log(solution(5));
     </script>
-</body>
-
+  </body>
 </html>
