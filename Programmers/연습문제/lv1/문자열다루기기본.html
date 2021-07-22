@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 다루기 기본</title>
+</head>
+
+<body>
+    <script>
+        function solution(s) {
+            var answer = false;
+            const len = s.length;
+
+            if (len === 4 || len === 6) {
+                let spt = s.split('');
+                return spt.every((e) => !isNaN(e))
+            }
+            return answer;
+        }
+
+
+        let s1 = "a234", s2 = "1234";
+        console.log(solution(s1));
+        console.log(solution(s2));
+    </script>
+</body>
+
+</html>
