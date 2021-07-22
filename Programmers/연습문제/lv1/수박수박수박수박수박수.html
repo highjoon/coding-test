@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>수박수박수박수박수박수</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(n) {
+                let answer = "";
+                for (let i = 0; i < n; i++) {
+                    if (i === 0 || i % 2 === 0) answer += "수";
+                    else answer += "박";
+                }
+                return answer;
+            }
+
+            let n1 = 3,
+                n2 = 4;
+            console.log(solution(n1));
+            console.log(solution(n2));
+        </script>
+    </body>
+</html>
