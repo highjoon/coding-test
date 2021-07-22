@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>2016년</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(a, b) {
+                let answer = "";
+                const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+                const date = new Date(`2016,${a},${b}`);
+                answer = days[date.getDay()];
+                return answer;
+            }
+
+            let a = 5;
+            let b = 24;
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html>
