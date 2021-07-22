@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>문자열 내 p와 y의 개수</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s) {
+                let answer = false;
+                let np = 0;
+                let ny = 0;
+                s.split("").forEach((x) => {
+                    if (x.toLowerCase() === "p") np++;
+                    if (x.toLowerCase() === "y") ny++;
+                });
+                if (np === ny) return true;
+                return answer;
+            }
+
+            let s1 = "pPoooyY";
+            let s2 = "Pyy";
+            console.log(solution(s1));
+            console.log(solution(s2));
+        </script>
+    </body>
+</html>
