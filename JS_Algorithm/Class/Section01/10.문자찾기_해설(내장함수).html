@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>10. 문자 찾기</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s, t) {
+                let answer = s.split(t); // 문자열 s를 t를 기준으로 나누어서 배열화. t가 3개면 문자열은 4개로 쪼개짐. 따라서 갯수를 새려면 -1 필요.
+                console.log(answer);
+                return answer.length - 1;
+            }
+
+            let str = "COMPUTERPROGRAMMING";
+            console.log(solution(str, "R"));
+        </script>
+    </body>
+</html>

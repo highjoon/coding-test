@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>8. 일곱 난쟁이</title>
+    </head>
+
+    <body>
+        <script>
+            /*
+            주어진 배열을 임의의 배열에 얕은 복사.
+            9명의 키를 전부 더한 값에, 임의로 뽑은 난쟁이 2명의 키를 뺏을 때 100이 되면 성공.
+            이후 배열에서 해당 난쟁이를 제거하면 진짜 일곱 난쟁이가 됨.
+        */
+
+            function solution(arr) {
+                let answer = arr; // 얕은 복사. 하나 수정하면 다른 하나도 수정됨.
+                let sum = arr.reduce((a, b) => a + b, 0);
+                // reduce  =>  배열 원소를 입력으로하여 1개의 수치 또는 문자열 또는 배열 또는 딕셔너리 생성. 0으로 초기화.
+                // 배열 원소의 합.
+
+                for (let i = 0; i < 8; i++) {
+                    // 먼저 한 놈 추출.
+                    for (let j = i + 1; i < 9; j++) {
+                        // 그 다음 한 놈 추출.
+                        if (sum - (arr[i] + arr[j]) === 100) {
+                            // 9명의 키를 전부 더한 값 - 추출한 2놈의 키가 100일 경우
+                            arr.splice(j, 1);
+                            // 뒷 놈 먼저 제거 (인덱스 꼬임 방지)
+                            arr.splice(i, 1);
+                            // 그 다음 앞 놈 제거
+                        }
+                    }
+                }
+
+                return answer;
+            }
+
+            let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

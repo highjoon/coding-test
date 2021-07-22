@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>14. 가장 긴 문자열</title>
+    </head>
+
+    <body>
+        <script>
+            // https://velog.io/@claire-euni/JS-array-%EC%95%88%EC%97%90%EC%84%9C-%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EB%AC%B8%EC%9E%90-%EC%B0%BE%EA%B8%B0
+            //  map() 함수는 모든 배열의 값에 Function을 실행하고 배열로 반환하는 Method
+
+            function solution(arr) {
+                let eachLength = arr.map((x) => x.length); // [7, 4, 7, 9, 4]
+                let maxNum = Math.max(...eachLength);
+                let where = eachLength.indexOf(maxNum);
+                return arr[where];
+            }
+
+            let str = ["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

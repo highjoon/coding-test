@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>3. 멘토링 문제</title>
+    </head>
+
+    <body>
+        <script>
+            /*
+        멘토,멘티가 생길 수 있는 총 경우의 수는 16가지.
+        */
+            function solution(test) {
+                let answer = 0;
+                let m = test.length; // 전체 배열 길이.
+                let n = test[0].length; // 각 배열 안의 학생 길이.
+                for (let i = 1; i <= n; i++) {
+                    // 멘토 학생 번호.
+                    for (let j = 1; j <= n; j++) {
+                        // 멘티 학생 번호.
+                        let cnt = 0; // (멘토, 멘티) 가능 하면 ++. cnt=m이면 성공.
+                        for (let k = 0; k < m; k++) {
+                            // 전체 배열 순환 검사.
+                            let pi = (pj = 0); // 멘토, 멘티 후보 변수 초기화.
+                            for (let s = 0; s < n; s++) {
+                                // 각 배열 안의 학생 순환 검사.
+                                if (test[k][s] === i) pi = s; // 각 배열 안의 학생 번호와 멘토 학생 번호가 같으면 pi에 해당 인덱스 삽입.
+                                if (test[k][s] === j) pj = s; // 각 배열 안의 학생 번호와 멘티 학생 번호가 같으면 pj에 해당 인덱스 삽입.
+                            }
+                            if (pi < pj) cnt++; // pi < pj 즉, 멘토 학생 순위가 멘티 학생 순위보다 앞에 있으면 cnt++.
+                        }
+                        if (cnt === m) answer++;
+                        // cnt가 전체 배열 길이와 같다면.
+                        // 즉, 전체 배열에서 다 검사해봤을때,
+                        // 멘토가 멘티보다 순위가 앞선다면 answer++.
+                    }
+                }
+                return answer;
+            }
+
+            let arr = [
+                [3, 4, 1, 2],
+                [4, 3, 2, 1],
+                [3, 1, 4, 2]
+            ];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

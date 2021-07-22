@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>16. 중복문자제거</title>
+    </head>
+
+    <body>
+        <script>
+            // indexOf(문자)  =>  문자의 첫 번째 인덱스를 반환. 발견 못하면 -1 반환
+            // indexOf(문자, 인덱스)  =>  인덱스 이후로부터 문자의 첫 번째 인덱스를 반환
+            function solution(s) {
+                let answer = "";
+                for (let i = 0; i < s.length; i++) {
+                    console.log(s[i], i, s.indexOf(s[i]));
+                    if (s.indexOf(s[i]) === i) answer += s[i];
+                }
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>

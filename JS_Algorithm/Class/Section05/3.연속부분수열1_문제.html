@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>3. 연속부분수열1</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(n, m, arr) {
+                let answer = (lt = 0),
+                    rt = 1;
+                let sum = arr[lt];
+                while (lt < n) {
+                    if (rt === n) {
+                        if (sum < m) break;
+                        else if (sum > m) sum -= arr[lt++];
+                    }
+                    if (sum < m) sum += arr[rt++];
+                    else if (sum > m) sum -= arr[lt++];
+                    else {
+                        sum = sum - arr[lt++] + arr[rt++];
+                        answer++;
+                    }
+                }
+                return answer;
+            }
+
+            let a = [1, 2, 1, 3, 1, 1, 1, 2];
+            console.log(solution(8, 6, a));
+            let a1 = [1, 1, 1, 1, 1];
+            console.log(solution(5, 3, a1));
+            let a2 = [1, 1, 1];
+            console.log(solution(3, 2, a2));
+        </script>
+    </body>
+</html>

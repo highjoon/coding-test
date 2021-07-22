@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>5. 최솟값 구하기</title>
+    </head>
+
+    <body>
+        <script>
+            // Number.MAX_SAFE_INTEGER  =>  안정적인 최대값 정수 제공
+            function solution(arr) {
+                let answer,
+                    min = Number.MAX_SAFE_INTEGER;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < min) min = arr[i];
+                }
+                answer = min;
+                return answer;
+            }
+
+            let arr = [5, 7, 12, 3, 2, 9, 11];
+            // let arr=[5, 3, 7, 11, 1, 15, 17];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

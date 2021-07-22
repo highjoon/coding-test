@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>12. 마구간 정하기</title>
+    </head>
+
+    <body>
+        <script>
+            function count(stable, dist) {
+                let ep = stable[0],
+                    cnt = 1;
+                for (let i = 0; i < stable.length; i++) {
+                    if (stable[i] - ep >= dist) {
+                        cnt++;
+                        ep = stable[i];
+                    }
+                }
+                return cnt;
+            }
+            function solution(m, stable) {
+                stable.sort((a, b) => a - b);
+                let answer = 0;
+                let lt = 1,
+                    rt = stable[stable.length - 1];
+                while (lt <= rt) {
+                    let mid = parseInt((lt + rt) / 2);
+                    if (count(stable, mid) >= m) {
+                        answer = mid;
+                        lt = mid + 1;
+                    } else rt = mid - 1;
+                }
+                return answer;
+            }
+
+            let arr = [1, 2, 8, 4, 9];
+            console.log(solution(3, arr));
+        </script>
+    </body>
+    <!-- parseInt((lt+rt)/2) => 5 일때 -->
+    <!-- 가장 가까운 두 말의 거리가 5일 때 3마리를 배치할 수 있느냐? -->
+</html>
