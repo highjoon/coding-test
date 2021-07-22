@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 내림차순으로 배치하기</title>
+</head>
+
+<body>
+    <script>
+        // function solution(s) {
+        //     var answer = '';
+        //     const lower = 'abcdefghijklmnopqrstuvwxyz';
+        //     const upper = lower.toUpperCase();
+        //     const al = upper + lower;
+        //     let min = s[0];
+        //     let arr = [];
+
+        //     for (let x of s) {
+        //         if (al.includes(x)) {
+        //             arr.push(al.indexOf(x))
+        //         }
+        //     }
+        //     arr = arr.sort((a, b) => b - a);
+
+        //     for (let x of arr) {
+        //         answer += al[x];
+        //     }
+        //     return answer;
+        // }
+
+        function solution(s) {
+            let answer = s.split('').sort().reverse().join('');
+            return answer;
+        }
+
+
+        let s1 = "Zbcdefg";
+        console.log(solution(s1));
+    </script>
+</body>
+
+</html>
