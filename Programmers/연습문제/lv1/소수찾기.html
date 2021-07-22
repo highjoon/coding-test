@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>소수 찾기</title>
+    </head>
+
+    <body>
+        <script>
+            // 에라토스테네스의 체
+            function solution(n) {
+                let arr = Array.from({ length: n }, () => true);
+                arr[0] = false;
+                for (let i = 2; i ** 2 <= n; i++) {
+                    if (arr[i - 1] === true) {
+                        for (let j = i ** 2; j <= n; j += i) {
+                            arr[j - 1] = false;
+                        }
+                    }
+                }
+                let answer = arr.filter((e) => {
+                    return e === true;
+                });
+                return answer.length;
+            }
+
+            let n1 = 10,
+                n2 = 5;
+            console.log(solution(n1));
+            console.log(solution(n2));
+        </script>
+    </body>
+</html>
