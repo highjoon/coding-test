@@ -1,28 +1,27 @@
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>3. 이진트리순회(후위)</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function solution(n) {          // 후위순회
-            let answer;
-            function DFS(n) {
-                if (n > 7) return;
-                else {
-                    DFS(n * 2);         // 왼쪽 이동
-                    DFS(n * 2 + 1);     // 오른쪽 이동
-                    console.log(n);     // 부모출력
-                }
-            }
-            DFS(n);
-            return answer;
+      function solution(n) {
+        // 후위순회
+        let answer;
+        function DFS(n) {
+          if (n > 7) return;
+          else {
+            DFS(n * 2); // 왼쪽 이동
+            DFS(n * 2 + 1); // 오른쪽 이동
+            console.log(n); // 부모출력
+          }
         }
+        DFS(n);
+        return answer;
+      }
 
-        console.log(solution(1));
+      console.log(solution(1));
     </script>
-</body>
-
+  </body>
 </html>
