@@ -22,4 +22,4 @@
 
 <p>프로그래머스 </P>
 
-[ex](../programmers/연습문제/lv1/약수의합.html)
+[ex](./programmers/연습문제/lv1/약수의합.html)
