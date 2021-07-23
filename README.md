@@ -271,3 +271,43 @@
 
 </div>
 </details>
+
+<br>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2018 카카오 블라인드 채용 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                       |
+| ----------------------------------------------------------------------------- |
+| [다트게임](<./Programmers/2018카카오블라인드채용/lv1/다트게임_2차(100).html>) |
+| [비밀지도](<./Programmers/2018카카오블라인드채용/lv1/비밀지도_1차(100).html>) |
+
+</div>
+</details>
+
+<br>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2019 카카오 개발자 겨울 인턴십 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                                     |
+| ------------------------------------------------------------------------------------------- |
+| [크레인 인형뽑기게임](./Programmers/2019카카오개발자겨울인턴십/lv1/크레인인형뽑기게임.html) |
+
+</div>
+</details>
+
+<br>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 SummerWinter Coding (~2018) </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                      |
+| ---------------------------------------------------------------------------- |
+| [소수 만들기](<./Programmers/SummerWinterCoding(~2018)/lv1/소수만들기.html>) |
+
+</div>
+</details>
