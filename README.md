@@ -233,8 +233,6 @@
 </div>
 </details>
 
-<br>
-
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 정렬 </span> </summary>
 <div markdown="1">
@@ -250,8 +248,6 @@
 
 </div>
 </details>
-
-<br>
 
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 해시 (Hash) </span> </summary>
@@ -272,8 +268,6 @@
 </div>
 </details>
 
-<br>
-
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2018 카카오 블라인드 채용 </span> </summary>
 <div markdown="1">
@@ -286,8 +280,6 @@
 </div>
 </details>
 
-<br>
-
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2019 카카오 개발자 겨울 인턴십 </span> </summary>
 <div markdown="1">
@@ -298,8 +290,6 @@
 
 </div>
 </details>
-
-<br>
 
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 SummerWinter Coding (~2018) </span> </summary>
