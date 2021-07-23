@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>내적</title>
+</head>
+
+<body>
+    <script>
+        function solution(a, b) {
+            let answer = 0;
+            for (let i = 0; i < a.length; i++) {
+                answer += a[i] * b[i];
+            }
+            return answer;
+        }
+
+        let a = [1, 2, 3, 4];
+        let b = [-3, -1, 0, 2];
+
+        // let a = [-1, 0, 1];
+        // let b = [1, 0, -1];
+        console.log(solution(a, b));
+    </script>
+</body>
+
+</html>
