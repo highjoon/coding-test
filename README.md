@@ -188,6 +188,21 @@
 </div>
 </details>
 
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 10 (동적 계획법 (Dynamic Programming) </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                   |     |
+| :--------------------------------- | :------------------------------------------------------------------------------------- | :-- |
+| 1                                  | [계단 오르기](./JS_Algorithm/Class/Section10/1.계단오르기_문제.html)                   |     |
+| 2                                  | [돌다리 건너기](./JS_Algorithm/Class/Section10/2.돌다리건너기_문제.html)               |     |
+| 3                                  | [최대부분증가수열](<./JS_Algorithm/Class/Section10/3.최대부분증가수열(LIS)_문제.html>) |     |
+| 4                                  | [동전 교환](./JS_Algorithm/Class/Section10/4.동전교환_문제.html)                       |     |
+| 5                                  | [최대점수 구하기](./JS_Algorithm/Class/Section10/5.최대점수구하기_문제.html)           |     |
+
+</div>
+</details>
+
 <br>
 <br>
 
