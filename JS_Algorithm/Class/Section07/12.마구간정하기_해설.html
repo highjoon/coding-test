@@ -7,14 +7,16 @@
     <body>
         <script>
             function count(stable, dist) {
-                let cnt = 1,
-                    ep = stable[0];
+                let cnt = 1, // 말 카운트
+                    ep = stable[0]; // 말을 놓을 좌표, 무조건 첫 좌표에 말을 놓을 것.
                 for (let i = 1; i < stable.length; i++) {
                     if (stable[i] - ep >= dist) {
-                        cnt++;
-                        ep = stable[i];
+                        cnt++; // 말을 배치
+                        ep = stable[i]; // 가장 최근에 말을 배치한 좌표
                     }
+                    console.log("stable[i]", stable[i], "ep", ep, "cnt", cnt, "dist", dist);
                 }
+                // 말을 총 몇마리 배치할 수 있는지 반환
                 return cnt;
             }
             function solution(c, stable) {
@@ -23,11 +25,14 @@
                 let lt = 1;
                 let rt = stable[stable.length - 1];
                 while (lt <= rt) {
-                    let mid = parseInt((lt + rt) / 2);
+                    let mid = parseInt((lt + rt) / 2); // 임시로 정한 가까운 두 말의 최대 거리
                     if (count(stable, mid) >= c) {
+                        // 임시로 정한 가까운 두 말의 최대 거리에 말을 배치했을 때 총 몇마리가 나오는지를 c와 비교.
                         answer = mid;
                         lt = mid + 1;
                     } else rt = mid - 1;
+                    console.log("answer", answer, "mid", mid, "lt", lt, "rt", rt);
+                    console.log("\n");
                 }
                 return answer;
             }
