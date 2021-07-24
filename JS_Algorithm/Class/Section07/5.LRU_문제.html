@@ -11,7 +11,6 @@
                 for (let i = 0; i < arr.length; i++) {
                     if (answer.length >= size) answer.pop();
                     if (answer.includes(arr[i])) {
-                        // answer.splice(answer.indexOf(arr[i]), 1);
                         answer.splice(i, 1);
                         answer.unshift(arr[i]);
                     } else {
