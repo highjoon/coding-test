@@ -284,13 +284,26 @@
 </details>
 
 <details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 탐욕법 (Greedy)) </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                           |
+| ----------------------------------------------------------------- |
+| [체육복](<./Programmers/탐욕법(Greedy)/lv1/체육복_1차(100).html>) |
+
+</div>
+</details>
+
+<details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2018 카카오 블라인드 채용 </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> Level 1 </p>                                       |
-| ----------------------------------------------------------------------------- |
-| [다트게임](<./Programmers/2018카카오블라인드채용/lv1/다트게임_2차(100).html>) |
-| [비밀지도](<./Programmers/2018카카오블라인드채용/lv1/비밀지도_1차(100).html>) |
+| <p style="font-size:20px"> Level 1 </p>                                                     |
+| ------------------------------------------------------------------------------------------- |
+| [다트게임](<./Programmers/2018카카오블라인드채용/lv1/다트게임_2차(100).html>)               |
+| [비밀지도](<./Programmers/2018카카오블라인드채용/lv1/비밀지도_1차(100).html>)               |
+| [신규 아이디 추천](<./Programmers/2018카카오블라인드채용/lv1/신규아이디추천_1차(100).html>) |
+| [실패율](<./Programmers/2018카카오블라인드채용/lv1/실패율_1차(100).html>)                   |
 
 </div>
 </details>
@@ -307,12 +320,60 @@
 </details>
 
 <details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2020 카카오 인턴십 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                          |
+| -------------------------------------------------------------------------------- |
+| [키패드 누르기](<./Programmers/2020카카오인턴십/lv1/키패드누르기_1차(100).html>) |
+
+</div>
+</details>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2021 카카오 채용 연계형 인턴십 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                                      |
+| -------------------------------------------------------------------------------------------- |
+| [숫자 문자열과 영단어](./Programmers/2021카카오채용연계형인턴십/lv1/숫자문자열과영단어.html) |
+
+</div>
+</details>
+
+<details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 SummerWinter Coding (~2018) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> Level 1 </p>                                      |
 | ---------------------------------------------------------------------------- |
 | [소수 만들기](<./Programmers/SummerWinterCoding(~2018)/lv1/소수만들기.html>) |
+| [예산](<./Programmers/SummerWinterCoding(~2018)/lv1/예산.html>)              |
+
+</div>
+</details>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 월간 코드 챌린지 시즌 1 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                           |
+| --------------------------------------------------------------------------------- |
+| [3진법 뒤집기](./Programmers/월간코드챌린지시즌1/lv1/3진법뒤집기.html)            |
+| [내적](./Programmers/월간코드챌린지시즌1/lv1/내적.html)                           |
+| [두개 뽑아서 더하기](./Programmers/월간코드챌린지시즌1/lv1/두개뽑아서더하기.html) |
+
+</div>
+</details>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 월간 코드 챌린지 시즌 2 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                           |
+| --------------------------------------------------------------------------------- |
+| [약수의 개수와 덧셈](./Programmers/월간코드챌린지시즌2/lv1/약수의개수와덧셈.html) |
+| [음양 더하기](./Programmers/월간코드챌린지시즌2/lv1/음양더하기.html)              |
 
 </div>
 </details>
