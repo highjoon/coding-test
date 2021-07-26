@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>3진법 뒤집기</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(n) {
+                let answer = 0;
+                let thd = [];
+                function DFS(v) {
+                    if (v === 0) return;
+                    else {
+                        DFS(parseInt(v / 3));
+                        thd.push(v % 3);
+                    }
+                }
+                DFS(n);
+                thd = thd.reverse().join("");
+                for (let i = 0; i < thd.length; i++) {
+                    answer += thd[i] * Math.pow(3, thd.length - i - 1);
+                }
+                return answer;
+            }
+
+            let n1 = 45;
+            let n2 = 125;
+            console.log(solution(n1));
+            console.log(solution(n2));
+        </script>
+    </body>
+</html>
