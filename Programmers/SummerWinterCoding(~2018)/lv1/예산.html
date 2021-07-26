@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>예산</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(d, budget) {
+                let answer = Number.MIN_SAFE_INTEGER;
+                let sum = 0;
+                d.sort((a, b) => a - b);
+                if (d[0] > budget) return 0;
+                for (let i = 0; i < d.length; i++) {
+                    if (sum + d[i] > budget) continue;
+                    sum += d[i];
+                    if (sum <= budget) answer = Math.max(answer, i);
+                }
+                return answer + 1;
+            }
+
+            let d1 = [1, 3, 2, 5, 4];
+            let b1 = 9;
+            let d2 = [2, 2, 3, 3];
+            let b2 = 10;
+            console.log(solution(d1, b1));
+            console.log(solution(d2, b2));
+        </script>
+    </body>
+</html>
