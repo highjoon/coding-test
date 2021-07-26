@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>[1차] 비밀지도</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(N, stages) {
+                let answer = [];
+                let tmp = [];
+                let notComplete = 0;
+                let complete = stages.length - notComplete;
+                let fail = 0;
+                let cnt = 0;
+
+                for (let i = 1; i <= N; i++) {
+                    for (let j = 0; j < stages.length; j++) {
+                        if (stages[j] === i) cnt++;
+                    }
+                    notComplete = cnt;
+                    fail = notComplete / complete;
+                    tmp.push([i, fail]);
+                    complete = complete - notComplete;
+                    cnt = 0;
+                }
+
+                answer = tmp.sort((a, b) => {
+                    if (a[1] === b[1]) return a[0] - b[0];
+                    else return b[1] - a[1];
+                });
+
+                answer = answer.map((x) => {
+                    return x[0];
+                });
+
+                return answer;
+            }
+
+            const n1 = 5;
+            const stages1 = [2, 1, 2, 6, 2, 4, 3, 3];
+            const n2 = 4;
+            const stages2 = [4, 4, 4, 4, 4];
+
+            console.log(solution(n1, stages1));
+            console.log(solution(n2, stages2));
+        </script>
+    </body>
+</html>
