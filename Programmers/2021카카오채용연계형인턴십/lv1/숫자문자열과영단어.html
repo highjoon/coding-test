@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>숫자 문자열과 영단어</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s) {
+                let answer = 0;
+                let str = "";
+                let words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+                let stack = [];
+
+                for (let x of s) {
+                    if (!isNaN(x)) stack.push(x);
+                    else {
+                        str += x;
+                        if (words.includes(str)) {
+                            stack.push(words.indexOf(str));
+                            str = "";
+                        }
+                    }
+                }
+
+                answer = Number(stack.join(""));
+                return answer;
+            }
+
+            let a = "one4seveneight";
+            let b = "23four5six7";
+            let c = "2three45sixseven";
+            let d = "123";
+            console.log(solution(a));
+            console.log(solution(b));
+            console.log(solution(c));
+            console.log(solution(d));
+        </script>
+    </body>
+</html>
