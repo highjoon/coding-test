@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>기능개발</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(progresses, speeds) {
+                let answer = [];
+                const m = speeds.length;
+                let cnt = 0;
+                let stack = [];
+                let res = [];
+
+                for (let i = 0; i < m; i++) {
+                    let tmp = Math.ceil((100 - progresses[i]) / speeds[i]);
+                    res.push([i, tmp]);
+                }
+
+                stack.push(res[0]);
+
+                for (let i = 1; i < res.length; i++) {
+                    let x = stack[stack.length - 1];
+                    stack.push(res[i]);
+                    if (x[0] < res[i][0] && x[1] < res[i][1]) {
+                        while (stack.length !== 1) {
+                            stack.shift();
+                            cnt++;
+                        }
+                        answer.push(cnt);
+                        cnt = 0;
+                    }
+                }
+
+                while (stack.length !== 0) {
+                    stack.pop();
+                    cnt++;
+                }
+                answer.push(cnt);
+
+                return answer;
+            }
+
+            let progresses1 = [93, 30, 55];
+            let speeds1 = [1, 30, 5];
+            console.log(solution(progresses1, speeds1));
+
+            let progresses2 = [95, 90, 99, 99, 80, 99];
+            let speeds2 = [1, 1, 1, 1, 1, 1];
+            console.log(solution(progresses2, speeds2));
+        </script>
+    </body>
+</html>
