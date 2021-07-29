@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>숫자의 표현</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(n) {
+                let answer = 0;
+                for (let i = 1; i <= n; i++) {
+                    let sum = 0;
+                    for (let j = i; j <= n; j++) {
+                        sum += j;
+                        if (sum === n) {
+                            answer++;
+                            break;
+                        }
+                    }
+                }
+                return answer;
+            }
+
+            let n = 15;
+            console.log(solution(n));
+        </script>
+    </body>
+</html>
