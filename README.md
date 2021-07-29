@@ -8,10 +8,8 @@
 
 <br>
 
-## 📒 문제 풀이 및 기록
-
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px">Section 01 (기본문제풀이) </span> </summary>
+<summary style="font-size: 20px"> <span>📒 Section 01 (기본문제풀이) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size: 15px"> No </p> | <p style="font-size: 15px"> 문제 </p>                                                      | <a href="https://velog.io/@arthur/series/Algorithm" style="font-style: italic; font-size: 15px">Velog</a>                                                          |
@@ -38,7 +36,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 02 (1,2차원 탐색) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 02 (1,2차원 탐색) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:15px"> No </p> | <p style="font-size:15px;"> 문제 </p>                                     | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-02-12%EC%B0%A8%EC%9B%90-%ED%83%90%EC%83%89" style="font-style: italic; font-size:15px">Velog</a> |
@@ -55,7 +53,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 03 (문자열 탐색) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 03 (문자열 탐색) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                              | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-03-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%83%90%EC%83%89" style="font-style: italic; font-size:20px">Velog</a> |
@@ -70,7 +68,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 04 (블루투포스) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 04 (블루투포스) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                 | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-04-%EB%B8%94%EB%A3%A8%ED%88%AC%ED%8F%AC%EC%8A%A4" style="font-style: italic; font-size:20px">Velog</a> |
@@ -85,7 +83,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 05 (투포인터,슬라이딩윈도우,해쉬) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 05 (투포인터,슬라이딩윈도우,해쉬) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                        | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-05-%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%94%A9%EC%9C%88%EB%8F%84%EC%9A%B0%ED%95%B4%EC%89%AC" style="font-style: italic; font-size:20px">Velog</a> |
@@ -103,7 +101,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 06 (스택, 큐) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 06 (스택, 큐) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                            | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-06-%EC%8A%A4%ED%83%9D-%ED%81%90" style="font-style: italic; font-size:20px">Velog</a>                      |
@@ -120,7 +118,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 07 (정렬과 그리디, 결정 알고리즘) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 07 (정렬과 그리디, 결정 알고리즘) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                          | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-07-%EC%A0%95%EB%A0%AC%EA%B3%BC-%EA%B7%B8%EB%A6%AC%EB%94%94-%EA%B2%B0%EC%A0%95%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" style="font-style: italic; font-size:20px">Velog</a> |
@@ -143,7 +141,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 08 (재귀함수와 완전탐색 (깊이우선탐색, DFS)) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 08 (재귀함수와 완전탐색 (깊이우선탐색, DFS)) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                              | <a href="https://velog.io/@arthur/series/JSAlgorithm-Section-08-%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98%EC%99%80-%EC%99%84%EC%A0%84%ED%83%90%EC%83%89%EA%B9%8A%EC%9D%B4%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89-DFS" style="font-style: italic; font-size:20px">Velog</a> |
@@ -171,7 +169,7 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 09 (그래프와 탐색 (DFS, BFS(넓이우선))) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 09 (그래프와 탐색 (DFS, BFS(넓이우선))) </span> </summary>
 <div markdown="1">
 
 | <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                           |     |
@@ -189,10 +187,10 @@
 </details>
 
 <details>
-<summary style="font-size: 20px"> <span style="font-size: 15px"> Section 10 (동적 계획법 (Dynamic Programming) </span> </summary>
+<summary style="font-size: 20px"> <span>📒  Section 10 (동적 계획법 (Dynamic Programming) </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> No </p> | <p style="font-size:20px"> 문제 </p>                                                   |     |
+| <p style="font-size:15px"> No </p> | <p style="font-size:15px"> 문제 </p>                                                   |     |
 | :--------------------------------- | :------------------------------------------------------------------------------------- | :-- |
 | 1                                  | [계단 오르기](./JS_Algorithm/Class/Section10/1.계단오르기_문제.html)                   |     |
 | 2                                  | [돌다리 건너기](./JS_Algorithm/Class/Section10/2.돌다리건너기_문제.html)               |     |
