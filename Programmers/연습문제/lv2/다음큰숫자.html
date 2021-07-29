@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>다음 큰 숫자</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(n) {
+                let answer = 0;
+                let beforeLen = n
+                    .toString(2)
+                    .split("")
+                    .filter((x) => x === "1").length;
+
+                let nextNum = n + 1;
+                let nextLen = nextNum
+                    .toString(2)
+                    .split("")
+                    .filter((x) => x === "1").length;
+
+                while (true) {
+                    if (nextLen === beforeLen) break;
+                    nextNum++;
+                    nextLen = nextNum
+                        .toString(2)
+                        .split("")
+                        .filter((x) => x === "1").length;
+                }
+
+                answer = nextNum;
+                return answer;
+            }
+
+            let n = 78;
+            let n2 = 15;
+            console.log(solution(n));
+            console.log(solution(n2));
+        </script>
+    </body>
+</html>
