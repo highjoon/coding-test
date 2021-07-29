@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>JadenCase 문자열 만들기</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "";
+                answer += s[0].toUpperCase();
+                for (let i = 1; i < s.length; i++) {
+                    if (s[i - 1] === undefined || s[i - 1] === " ") answer += s[i].toUpperCase();
+                    else answer += s[i].toLowerCase();
+                }
+                return answer;
+            }
+
+            let s1 = "3people unFollowed me";
+            let s2 = "for the last week";
+            console.log(solution(s1));
+            console.log(solution(s2));
+        </script>
+    </body>
+</html>
