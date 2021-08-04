@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>다음 큰 숫자</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s) {
+                let answer = true;
+                let stack = [];
+                for (let x of s) {
+                    if (x === "(") stack.push(x);
+                    else {
+                        if (stack.length === 0) return false;
+                        else stack.pop();
+                    }
+                }
+                if (stack.length !== 0) return false;
+                return answer;
+            }
+
+            let s1 = "()()";
+            let s2 = "(())()";
+            let s3 = ")()(";
+            let s4 = "(()(";
+            let s5 = "))))";
+
+            console.log(solution(s1));
+            console.log(solution(s2));
+            console.log(solution(s3));
+            console.log(solution(s4));
+            console.log(solution(s5));
+        </script>
+    </body>
+</html>
