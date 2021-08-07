@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>구명보트</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(people, limit) {
+                let answer = 0;
+                people.sort((a, b) => a - b);
+                while (people.length) {
+                    let heavy = people.pop();
+                    if (people[0] + heavy > limit) {
+                        answer++;
+                    } else {
+                        people.shift();
+                        answer++;
+                    }
+                }
+                return answer;
+            }
+
+            let p1 = [70, 50, 80, 50];
+            let l1 = 100;
+            let p2 = [70, 80, 50];
+            let l2 = 100;
+            let p3 = [20, 30, 40, 50, 60, 70, 80, 90, 100];
+            let l3 = 100;
+
+            console.log(solution(p1, l1));
+            console.log(solution(p2, l2));
+            console.log(solution(p3, l3));
+        </script>
+    </body>
+</html>
