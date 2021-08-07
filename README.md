@@ -303,6 +303,7 @@
 | <p style="font-size:20px"> Level 2 </p>                        |
 | -------------------------------------------------------------- |
 | [기능 개발](<./Programmers/스택큐/lv2/기능개발_2차(100).html>) |
+| [프린터](./Programmers/스택큐/lv2/프린터.html)                 |
 
 </div>
 </details>
@@ -311,9 +312,11 @@
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 탐욕법 (Greedy)) </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> Level 1 </p>                           |
-| ----------------------------------------------------------------- |
-| [체육복](<./Programmers/탐욕법(Greedy)/lv1/체육복_1차(100).html>) |
+| <p style="font-size:20px"> Level 1 </p>                                |
+| ---------------------------------------------------------------------- |
+| [체육복](<./Programmers/탐욕법(Greedy)/lv1/체육복_1차(100).html>)      |
+| [구명 보트](<./Programmers/탐욕법(Greedy)/lv2/구명보트_2차(100).html>) |
+| [큰 수 만들기](<./Programmers/탐욕법(Greedy)/lv2/큰수만들기.html>)     |
 
 </div>
 </details>
