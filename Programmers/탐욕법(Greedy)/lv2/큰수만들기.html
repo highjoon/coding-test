@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>큰 수 만들기</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(number, k) {
+                let answer = "";
+                let stack = [];
+
+                for (let x of number) {
+                    if (stack.length === 0) {
+                        stack.push(x);
+                        continue;
+                    }
+                    while (stack[stack.length - 1] < x) {
+                        if (k === 0 || stack.length === 0) break;
+                        stack.pop();
+                        k--;
+                    }
+                    stack.push(x);
+                }
+                stack.splice(stack.length - k, k);
+                answer = stack.join("");
+                return answer;
+            }
+
+            let n1 = "1924";
+            let k1 = 2;
+            let n2 = "1231234";
+            let k2 = 3;
+            let n3 = "4177252841";
+            let k3 = 4;
+            let n4 = "999";
+            let k4 = 2;
+            let n5 = "99999";
+            let k5 = 4;
+            let n6 = "9999999";
+            let k6 = 3;
+            console.log(solution(n1, k1));
+            console.log(solution(n2, k2));
+            console.log(solution(n3, k3));
+            console.log(solution(n4, k4));
+            console.log(solution(n5, k5));
+            console.log(solution(n6, k6));
+        </script>
+    </body>
+</html>
