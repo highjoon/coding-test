@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>짝지어 제거하기</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(s) {
+                let answer = 0;
+                let stack = [];
+                for (let x of s) {
+                    stack[stack.length - 1] === x ? stack.pop() : stack.push(x);
+                }
+                stack.length ? (answer = 0) : (answer = 1);
+                return answer;
+            }
+
+            let s1 = "baabaa";
+            let s2 = "cdcd";
+            console.log(solution(s1));
+            console.log(solution(s2));
+        </script>
+    </body>
+</html>
