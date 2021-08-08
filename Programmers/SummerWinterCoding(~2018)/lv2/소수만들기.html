@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>스킬트리</title>
+    </head>
+
+    <body>
+        <script>
+            function solution(skill, skill_trees) {
+                let answer = 0;
+                let skill_list = [];
+                skill_trees.forEach((x) => {
+                    let compare = "";
+                    for (let k of x) {
+                        if (skill.includes(k)) compare += k;
+                    }
+                    skill_list.push(compare);
+                });
+
+                skill_list.forEach((x) => {
+                    let cut = skill.substr(0, x.length);
+                    if (cut === x) answer++;
+                });
+                return answer;
+            }
+
+            let skill = "CBD";
+            let skill_trees = ["BACDE", "CBADF", "AECB", "BDA"];
+            console.log(solution(skill, skill_trees));
+        </script>
+    </body>
+</html>
