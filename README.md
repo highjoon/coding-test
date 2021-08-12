@@ -300,10 +300,11 @@
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 스택큐 </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> Level 2 </p>                        |
-| -------------------------------------------------------------- |
-| [기능 개발](<./Programmers/스택큐/lv2/기능개발_2차(100).html>) |
-| [프린터](./Programmers/스택큐/lv2/프린터.html)                 |
+| <p style="font-size:20px"> Level 2 </p>                              |
+| -------------------------------------------------------------------- |
+| [기능 개발](<./Programmers/스택큐/lv2/기능개발_2차(100).html>)       |
+| [프린터](./Programmers/스택큐/lv2/프린터.html)                       |
+| [다리를 지나는 트럭](./Programmers/스택큐/lv2/다리를지나는트럭.html) |
 
 </div>
 </details>
@@ -312,14 +313,42 @@
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 탐욕법 (Greedy)) </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> Level 1 </p>                                |
+| <p style="font-size:20px"> Level 1 </p>                           |
+| ----------------------------------------------------------------- |
+| [체육복](<./Programmers/탐욕법(Greedy)/lv1/체육복_1차(100).html>) |
+
+| <p style="font-size:20px"> Level 2 </p>                                |
 | ---------------------------------------------------------------------- |
-| [체육복](<./Programmers/탐욕법(Greedy)/lv1/체육복_1차(100).html>)      |
 | [구명 보트](<./Programmers/탐욕법(Greedy)/lv2/구명보트_2차(100).html>) |
 | [큰 수 만들기](<./Programmers/탐욕법(Greedy)/lv2/큰수만들기.html>)     |
 
 </div>
 </details>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 완전 탐색 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 2 </p>             |
+| --------------------------------------------------- |
+| [소수 찾기](./Programmers/완전탐색/소수찾기.html)   |
+| [카펫](<./Programmers/완전탐색/카펫_2차(100).html>) |
+
+</div>
+</details>
+
+<details>
+<summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2017 팁스타운 </span> </summary>
+<div markdown="1">
+
+| <p style="font-size:20px"> Level 1 </p>                                                     |
+| ------------------------------------------------------------------------------------------- |
+| [짝지어 제거하기](./Programmers/2017팁스타운/짝지어제거하기.html)                           |
+| [비밀지도](<./Programmers/2018카카오블라인드채용/lv1/비밀지도_1차(100).html>)               |
+| [신규 아이디 추천](<./Programmers/2018카카오블라인드채용/lv1/신규아이디추천_1차(100).html>) |
+| [실패율](<./Programmers/2018카카오블라인드채용/lv1/실패율_1차(100).html>)                   |
+
+</div>
 
 <details>
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 2018 카카오 블라인드 채용 </span> </summary>
@@ -383,10 +412,14 @@
 <summary style="font-size: 20px"> <span style="font-size: 20px"> 📒 SummerWinter Coding (~2018) </span> </summary>
 <div markdown="1">
 
-| <p style="font-size:20px"> Level 1 </p>                                      |
-| ---------------------------------------------------------------------------- |
-| [소수 만들기](<./Programmers/SummerWinterCoding(~2018)/lv1/소수만들기.html>) |
-| [예산](<./Programmers/SummerWinterCoding(~2018)/lv1/예산.html>)              |
+| <p style="font-size:20px"> Level 1 </p>                             |
+| ------------------------------------------------------------------- |
+| [소수 만들기](./Programmers/SummerWinterCoding/lv1/소수만들기.html) |
+| [예산](./Programmers/SummerWinterCoding/lv1/예산.html)              |
+
+| <p style="font-size:20px"> Level 2 </p>                        |
+| -------------------------------------------------------------- |
+| [스킬트리](./Programmers/SummerWinterCoding/lv2/스킬트리.html) |
 
 </div>
 </details>
