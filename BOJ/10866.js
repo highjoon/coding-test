@@ -1,24 +1,5 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-
-const input = [
-  "15",
-  "push_back 1",
-  "push_front 2",
-  "front",
-  "back",
-  "size",
-  "empty",
-  "pop_front",
-  "pop_back",
-  "pop_front",
-  "size",
-  "empty",
-  "pop_back",
-  "push_front 3",
-  "empty",
-  "front",
-];
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 const N = Number(input.shift());
 const deque = [];
