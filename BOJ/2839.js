@@ -1,10 +1,6 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().split("\n");
-// let input = ["18"];
-// let input = ["4"];
-// let input = ["6"];
-// let input = ["9"];
-let input = ["11"];
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().split("\n");
+
 let N = Number(input[0]);
 
 let answer = 0;
