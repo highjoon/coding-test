@@ -1,7 +1,6 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const input = ["2", "6 12 10", "30 50 72"];
 const T = Number(input.shift());
 
 for (let i = 0; i < T; i++) {
