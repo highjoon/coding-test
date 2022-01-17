@@ -1,15 +1,5 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-
-const input = [
-  6,
-  "(())())",
-  "(((()())()",
-  "(()())((()))",
-  "((()()(()))(((())))()",
-  "()()()()(()()())()",
-  "(()((())()(",
-];
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 const T = input.shift();
 const result = [];
