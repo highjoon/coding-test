@@ -1,22 +1,22 @@
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
-let cases = input[0];
-let arr = [];
-let stack = [];
+
+const n = input.shift();
+const stack = [];
 let answer = "";
 
-for (let i = 0; i < cases; i++) {
-  arr[i] = i + 1;
-}
+const array = Array.from({ length: n }, (v, i) => i + 1);
 
-for (let j = 1; j <= cases; j++) {
+for (let i = 0; i < n; i++) {
   let count = 1;
-  while (count <= cases && stack[stack.length - 1] != input[j]) {
-    stack.push(arr.shift());
+
+  while (count <= n && stack[stack.length - 1] != input[i]) {
+    stack.push(array.shift());
     answer += "+\n";
     count++;
   }
-  if (stack[stack.length - 1] == input[j]) {
+
+  if (stack[stack.length - 1] == input[i]) {
     stack.pop();
     answer += "-\n";
   } else {
@@ -24,4 +24,5 @@ for (let j = 1; j <= cases; j++) {
     break;
   }
 }
+
 console.log(answer);
