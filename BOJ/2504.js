@@ -1,8 +1,5 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim();
-// let input = "(()[[]])([])";
-// let input = "[][]((])";
-let input = "]()";
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim();
 
 const stack = [];
 
