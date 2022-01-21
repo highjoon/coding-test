@@ -1,7 +1,6 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-let input = ["150", "266", "427"];
 const A = Number(input[0]);
 const B = Number(input[1]);
 const C = Number(input[2]);
