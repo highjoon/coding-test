@@ -1,6 +1,6 @@
-// let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim();
-let input = "27";
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim();
+
 let N = Number(input);
 
 let result = [];
