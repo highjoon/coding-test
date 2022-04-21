@@ -1,24 +1,27 @@
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-let idx = 0;
+input.pop();
+input = input.map((v) => v.split(" ").map(Number));
+
 let answer = "";
+let K;
+let S;
 
-while (input[idx].length !== 1) {
-  const [N, ...S] = input[idx++].split(" ").map((v) => Number(v));
-
-  function dfs(V, pick) {
-    if (pick.length === 6) {
-      answer += `${pick.join(" ")}\n`;
-      return;
-    }
-
-    for (let i = V; i < N; i++) {
-      dfs(i + 1, [...pick, S[i]]);
-    }
-  }
-  dfs(0, []);
+input.forEach((x) => {
+  [K, ...S] = x;
+  DFS(0, []);
   answer += "\n";
+});
+
+function DFS(L, pick) {
+  if (pick.length === 6) {
+    answer += `${pick.join(" ")}\n`;
+    return;
+  }
+  for (let i = L; i < K; i++) {
+    DFS(i + 1, [...pick, S[i]]);
+  }
 }
 
 console.log(answer);
