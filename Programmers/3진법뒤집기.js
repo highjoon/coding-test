@@ -11,6 +11,7 @@ function solution(n) {
   DFS(n);
   temp = temp.reverse().join("");
   console.log(temp);
+  temp ?? temp.join("");
 
   for (let i = 0; i < temp.length; i++) {
     answer += temp[i] * Math.pow(3, temp.length - i - 1);
