@@ -5,7 +5,6 @@ let N = Number(input.shift());
 let arr = input.map((v) => v.split(" ").map(Number));
 let dp = Array.from({ length: N }, () => 1);
 let answer = 0;
-let count = 0;
 
 arr = arr.sort((a, b) => a[0] - b[0]);
 
