@@ -3,12 +3,13 @@ let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 let [N, M] = input[0].split(" ").map(Number);
 input = input.slice(1).map((v) => v.split("").map(Number));
+
 let ch = Array.from({ length: 101 }, () => Array(101).fill(0));
+let answer = 0;
+let queue = [];
+
 const dx = [0, 0, -1, 1];
 const dy = [1, -1, 0, 0];
-
-let answer = Number.MAX_SAFE_INTEGER;
-let queue = [];
 
 queue.push([0, 0]);
 ch[0][0] = 1;
