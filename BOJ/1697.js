@@ -14,7 +14,6 @@ queue.push(N);
 ch[N] = 1;
 
 let answer = 0;
-let idx = 0;
 
 function BFS() {
   while (queue.length) {
