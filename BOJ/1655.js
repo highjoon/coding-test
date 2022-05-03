@@ -189,9 +189,7 @@ for (let num of input) {
     minHeap.insert(maxHeap.extractMax());
   }
 
-  if (minHeap.size() === 0 && maxHeap.size() === 0) {
-    mid = Number.MIN_SAFE_INTEGER;
-  } else if (minHeap.size() === maxHeap.size()) {
+  if (minHeap.size() === maxHeap.size()) {
     mid = Math.min(minHeap.getMin(), maxHeap.getMax());
   } else if (minHeap.size() > maxHeap.size()) {
     mid = minHeap.getMin();
