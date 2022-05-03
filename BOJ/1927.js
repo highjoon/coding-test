@@ -1,11 +1,10 @@
-// let fs = require("fs");
-// let input = fs
-//   .readFileSync("/dev/stdin")
-//   .toString()
-//   .trim()
-//   .split("\n")
-//   .map(Number);
-let input = [9, 0, 12345678, 1, 2, 0, 0, 0, 0, 32];
+let fs = require("fs");
+let input = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n")
+  .map(Number);
 
 class MinBinaryHeap {
   constructor() {
