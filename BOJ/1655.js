@@ -183,9 +183,7 @@ for (let num of input) {
 
   if (minHeap.size() > maxHeap.size()) {
     maxHeap.insert(minHeap.extractMin());
-  }
-
-  if (maxHeap.size() > minHeap.size()) {
+  } else if (maxHeap.size() > minHeap.size()) {
     minHeap.insert(maxHeap.extractMax());
   }
 
