@@ -17,10 +17,10 @@ class MinBinaryHeap {
 
   insert(element) {
     this.values.push(element);
-    this.bubbleDown();
+    this.bubbleUp();
   }
 
-  bubbleDown() {
+  bubbleUp() {
     let idx = this.values.length - 1;
     const element = this.values[idx];
 
@@ -40,13 +40,13 @@ class MinBinaryHeap {
     const end = this.values.pop();
     if (this.values.length > 0) {
       this.values[0] = end;
-      this.sinkUp();
+      this.sinkDown();
     }
 
     return min;
   }
 
-  sinkUp() {
+  sinkDown() {
     let idx = 0;
     const length = this.values.length;
     const element = this.values[idx];
