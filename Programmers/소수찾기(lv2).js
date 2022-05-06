@@ -1,15 +1,16 @@
 function solution(numbers) {
   let answer = new Set();
-  let temp = Array.from({ length: numbers.length }, () => 0);
+  let ch;
+  let temp;
 
   for (let i = 1; i <= numbers.length; i++) {
-    let ch = Array.from({ length: numbers.length }, () => 0);
+    ch = Array.from({ length: numbers.length }, () => 0);
     temp = Array.from({ length: i }, () => 0);
 
-    DFS(0, i, ch);
+    DFS(0, i);
   }
 
-  function DFS(L, end, ch) {
+  function DFS(L, end) {
     if (L === end) {
       let num = Number(temp.join(""));
       if (isPrime(num)) answer.add(num);
@@ -19,7 +20,7 @@ function solution(numbers) {
         if (ch[i] === 0) {
           ch[i] = 1;
           temp[L] = numbers[i];
-          DFS(L + 1, end, ch);
+          DFS(L + 1, end);
           ch[i] = 0;
         }
       }
