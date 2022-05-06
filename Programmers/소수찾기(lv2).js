@@ -12,7 +12,6 @@ function solution(numbers) {
   function DFS(L, end, ch) {
     if (L === end) {
       let num = Number(temp.join(""));
-      console.log(num);
       if (isPrime(num)) answer.add(num);
       return;
     } else {
