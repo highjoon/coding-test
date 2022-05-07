@@ -1,28 +1,20 @@
 function solution(numbers) {
   let answer = new Set();
-  let ch;
-  let temp;
+  let ch = Array.from({ length: numbers.length }, () => 0);
+  let temp = [];
 
-  for (let i = 1; i <= numbers.length; i++) {
-    ch = Array.from({ length: numbers.length }, () => 0);
-    temp = Array.from({ length: i }, () => 0);
+  function DFS(L) {
+    let num = Number(temp.join(""));
+    if (isPrime(num)) answer.add(num);
+    if (L === numbers.length) return;
 
-    DFS(0, i);
-  }
-
-  function DFS(L, end) {
-    if (L === end) {
-      let num = Number(temp.join(""));
-      if (isPrime(num)) answer.add(num);
-      return;
-    } else {
-      for (let i = 0; i < numbers.length; i++) {
-        if (ch[i] === 0) {
-          ch[i] = 1;
-          temp[L] = numbers[i];
-          DFS(L + 1, end);
-          ch[i] = 0;
-        }
+    for (let i = 0; i < numbers.length; i++) {
+      if (ch[i] === 0) {
+        ch[i] = 1;
+        temp.push(numbers[i]);
+        DFS(L + 1);
+        ch[i] = 0;
+        temp.pop();
       }
     }
   }
@@ -35,6 +27,7 @@ function solution(numbers) {
     return true;
   }
 
+  DFS(0);
   answer = answer.size;
   return answer;
 }
