@@ -5,17 +5,15 @@ function solution(board) {
   for (let i = 1; i < board.length; i++) {
     for (let j = 1; j < board[i].length; j++) {
       if (board[i][j] >= 1) {
-        let min = Math.min(
-          board[i - 1][j],
+        board[i][j] += Math.min(
+          board[i][j - 1],
           board[i - 1][j - 1],
-          board[i][j - 1]
+          board[i - 1][j]
         );
-        board[i][j] += min;
+        answer = Math.max(answer, board[i][j] * board[i][j]);
       }
     }
-    answer = Math.max(...board[i], answer);
   }
-  answer = answer * answer;
   return answer;
 }
 
