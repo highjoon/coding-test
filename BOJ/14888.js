@@ -5,76 +5,37 @@ let N = Number(input[0]);
 let nums = input[1].split(" ").map(Number);
 let numberOfOperators = input[2].split(" ").map(Number);
 
-let result = [];
-let answer = [];
+const answer = [];
+let max = Number.MIN_SAFE_INTEGER;
+let min = Number.MAX_SAFE_INTEGER;
 
-const operators = getOperators();
-
-let ch = Array.from({ length: operators.length + 1 }, () => 0);
-let tmp = Array.from({ length: operators.length + N }, () => 0);
-
-for (let i = 0; i < nums.length; i++) {
-  tmp[i * 2] = nums[i];
-}
-
-DFS(0);
-answer.push(Math.max(...result));
-answer.push(Math.min(...result));
-console.log(answer.join("\n"));
-
-function DFS(L) {
+function DFS(L, result) {
   if (L === N - 1) {
-    result.push(evaluate(tmp.slice().reverse()));
+    max = Math.max(max, result);
+    min = Math.min(min, result);
     return;
   } else {
-    for (let i = 0; i < operators.length; i++) {
-      if (ch[i] === 0) {
-        ch[i] = 1;
-        tmp[L * 2 + 1] = operators[i];
-        DFS(L + 1);
-        ch[i] = 0;
+    for (let i = 0; i < numberOfOperators.length; i++) {
+      if (numberOfOperators[i] > 0) {
+        numberOfOperators[i] -= 1;
+        if (i === 0) DFS(L + 1, result + nums[L + 1]);
+        else if (i === 1) DFS(L + 1, result - nums[L + 1]);
+        else if (i === 2) DFS(L + 1, result * nums[L + 1]);
+        else if (i === 3) {
+          DFS(
+            L + 1,
+            result < 0
+              ? Math.floor((result * -1) / nums[L + 1]) * -1
+              : Math.floor(result / nums[L + 1])
+          );
+        }
+        numberOfOperators[i] += 1;
       }
     }
   }
 }
 
-function getOperators() {
-  const candidates = ["+", "-", "*", "/"];
-  const arr = [];
-
-  for (let i = 0; i < candidates.length; i++) {
-    let count = 0;
-    while (count !== numberOfOperators[i]) {
-      arr.push(candidates[i]);
-      count++;
-    }
-  }
-
-  return arr;
-}
-
-function evaluate(stack) {
-  while (stack.length > 1) {
-    let num1 = stack.pop();
-    let operator = stack.pop();
-    let num2 = stack.pop();
-
-    switch (operator) {
-      case "+":
-        stack.push(num1 + num2);
-        break;
-      case "-":
-        stack.push(num1 - num2);
-        break;
-      case "*":
-        stack.push(num1 * num2);
-        break;
-      case "/":
-        stack.push(parseInt(num1 / num2));
-        break;
-      default:
-        break;
-    }
-  }
-  return stack.pop();
-}
+DFS(0, nums[0]);
+answer.push(max);
+answer.push(min);
+console.log(answer.join("\n"));
