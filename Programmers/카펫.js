@@ -1,28 +1,23 @@
 function solution(brown, yellow) {
-  let answer = [];
-
-  function getFullDivisors(num) {
-    const result = [];
+  function getFullDivs(num) {
+    let result = [];
     for (let i = 3; i < num; i++) {
-      if (num % i === 0 && num / i > 2) {
-        result.push([i, num / i]);
-      }
+      if (num % i === 0 && num / i > 2) result.push([i, num / i]);
     }
     return result;
   }
 
-  let fullDivs = getFullDivisors(brown + yellow);
-  let flag = true;
+  let answer;
+  let fullDivs = getFullDivs(brown + yellow);
 
   for (let fullDiv of fullDivs) {
-    let [fullX, fullY] = fullDiv;
-    if ((fullX - 2) * (fullY - 2) === yellow && fullX >= fullY) {
-      answer.push(fullX);
-      answer.push(fullY);
-      flag = false;
+    if (
+      fullDiv[0] >= fullDiv[1] &&
+      (fullDiv[0] - 2) * (fullDiv[1] - 2) === yellow
+    ) {
+      answer = fullDiv;
       break;
     }
-    if (!flag) break;
   }
 
   return answer;

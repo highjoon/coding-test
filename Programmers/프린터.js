@@ -1,18 +1,20 @@
 function solution(priorities, location) {
   let answer = 0;
-  priorities = priorities.map((v, i) => {
-    return i === location ? v.toString() : v;
+  const queue = priorities.map((v, i) => {
+    if (i === location) return v.toString();
+    else return v;
   });
 
-  while (true) {
-    let current = priorities.shift();
-    if (priorities.some((v) => v > Number(current))) {
-      priorities.push(current);
+  while (queue.length) {
+    let current = queue.shift();
+    if (queue.some((v) => Number(v) > current)) {
+      queue.push(current);
     } else {
-      answer++;
       if (typeof current === "string") {
+        answer++;
         break;
       }
+      answer++;
     }
   }
 
@@ -20,4 +22,4 @@ function solution(priorities, location) {
 }
 
 console.log(solution([2, 1, 3, 2], 2));
-console.log(solution([1, 1, 9, 1, 1, 1], 0));
+console.log(solution([1, 1, 9, 1, 1, 1], location20));

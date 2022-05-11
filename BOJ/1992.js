@@ -1,32 +1,35 @@
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const N = Number(input[0]);
-const nums = input.slice(1).map((v) => v.split("").map(Number));
+function solution(input) {
+  const N = Number(input[0]);
+  const nums = input.slice(1).map((v) => v.split("").map(Number));
+  const answer = [];
 
-const quadTree = [];
+  function recursion(n, row, col) {
+    let result = 0;
 
-function recursion(n, x, y) {
-  let total = 0;
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        result += nums[i + row][j + col];
+      }
+    }
 
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      total += nums[y + j][x + i];
+    if (result === 0) answer.push(0);
+    else if (result === n * n) answer.push(1);
+    else {
+      n /= 2;
+      answer.push("(");
+      recursion(n, row, col);
+      recursion(n, row, col + n);
+      recursion(n, row + n, col);
+      recursion(n, row + n, col + n);
+      answer.push(")");
     }
   }
 
-  if (total === 0) quadTree.push(0);
-  else if (total === n * n) quadTree.push(1);
-  else {
-    n /= 2;
-    quadTree.push("(");
-    recursion(n, x, y);
-    recursion(n, x + n, y);
-    recursion(n, x, y + n);
-    recursion(n, x + n, y + n);
-    quadTree.push(")");
-  }
+  recursion(N, 0, 0);
+  return answer.join("");
 }
 
-recursion(N, 0, 0);
-console.log(quadTree.join(""));
+console.log(solution(input));
