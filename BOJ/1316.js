@@ -1,31 +1,28 @@
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const N = Number(input.shift());
-let answer = 0;
+function solution(input) {
+  const N = Number(input[0]);
+  input = input.slice(1);
+  let answer = 0;
 
-for (let word of input) {
-  let temp = "";
-  let isGroupWord = true;
-  const endWords = [];
-
-  for (let str of word) {
-    if (str != temp) {
-      if (endWords.includes(str)) {
+  for (let word of input) {
+    const stack = [];
+    let isGroupWord = true;
+    for (let str of word) {
+      if (!stack.includes(str)) {
+        stack.push(str);
+      } else if (stack.includes(str) && stack[stack.length - 1] !== str) {
         isGroupWord = false;
         break;
-      } else {
-        temp = str;
-        endWords.push(str);
+      } else if (stack[stack.length - 1] === str) {
+        continue;
       }
-    } else {
-      continue;
     }
+    if (isGroupWord) answer++;
   }
 
-  if (isGroupWord) {
-    answer++;
-  }
+  return answer;
 }
 
-console.log(answer);
+console.log(solution(input));
