@@ -1,35 +1,37 @@
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().trim();
 
-const stack = [];
+function solution(input) {
+  input = input.split("").reverse();
+  const croatian = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="];
+  const set = Array.from(new Set(croatian.join("")));
 
-for (let x of input) {
-  if (!stack.length) {
-    stack.push(x);
-  } else if (
-    stack[stack.length - 2] === "d" &&
-    stack[stack.length - 1] === "z" &&
-    x === "="
-  ) {
-    stack.pop();
-    stack.pop();
-    stack.push("C");
-  } else {
-    if (
-      (stack[stack.length - 1] === "c" && x === "=") ||
-      (stack[stack.length - 1] === "c" && x === "-") ||
-      (stack[stack.length - 1] === "d" && x === "-") ||
-      (stack[stack.length - 1] === "l" && x === "j") ||
-      (stack[stack.length - 1] === "n" && x === "j") ||
-      (stack[stack.length - 1] === "s" && x === "=") ||
-      (stack[stack.length - 1] === "z" && x === "=")
-    ) {
+  const stack = [];
+  let answer = 0;
+
+  while (input.length) {
+    const cur = input.pop();
+    if (set.includes(cur)) stack.push(cur);
+    else answer++;
+  }
+
+  while (stack.length) {
+    const cur = stack.pop();
+    if (croatian.includes(stack[stack.length - 1] + cur)) {
+      if (
+        stack[stack.length - 1] + cur === "z=" &&
+        stack[stack.length - 2] === "d"
+      ) {
+        stack.pop();
+      }
       stack.pop();
-      stack.push("C");
+      answer++;
     } else {
-      stack.push(x);
+      answer++;
     }
   }
+
+  return answer;
 }
 
-console.log(stack.length);
+console.log(solution(input));
