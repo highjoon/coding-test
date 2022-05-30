@@ -13,16 +13,16 @@ function solution(input) {
 
   for (let i = 0; i < input.length; i++) {
     if (input[i] === "q" && !visited[i]) {
-      let flag = true;
+      let isSameDuck = false;
       for (let j = i; j < input.length; j++) {
         if (input[j] === quack[idx] && !visited[j]) {
           idx++;
           visited[j] = true;
         }
         if (idx === 5) {
-          if (flag) {
+          if (isSameDuck === false) {
             answer++;
-            flag = false;
+            isSameDuck = true;
           }
           idx = 0;
           continue;
