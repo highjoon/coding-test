@@ -10,7 +10,7 @@ function solution(input) {
     let b = input.pop();
     let charA = new Map();
     let charB = new Map();
-    let sorted = [];
+    let duplicated = [];
     let result = "";
 
     for (let x of a) {
@@ -24,12 +24,12 @@ function solution(input) {
     }
 
     for (let [key, val] of charA) {
-      if (charB.has(key)) sorted.push(key);
+      if (charB.has(key)) duplicated.push(key);
     }
 
-    sorted = sorted.sort();
+    duplicated = duplicated.sort();
 
-    for (let char of sorted) {
+    for (let char of duplicated) {
       result += char.repeat(Math.min(charA.get(char), charB.get(char)));
     }
 
