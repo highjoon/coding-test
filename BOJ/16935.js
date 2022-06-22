@@ -1,109 +1,118 @@
-function reversal(type) {
-  switch (type) {
-    case upDown:
-      for (let i = 0; i < N / 2; i++) {
-        for (let j = 0; j < M; j++) {
-          const tmp = arr[i][j];
-          arr[i][j] = arr[N - 1 - i][j];
-          arr[N - 1 - i][j] = tmp;
+let fs = require("fs");
+let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
+
+function solution(input) {
+  let [N, M, R] = input[0].split(" ").map(Number);
+  let orders = input[input.length - 1].split(" ").map(Number);
+  input = input.slice(1, input.length - 1).map((v) => v.split(" ").map(Number));
+  let answer = [];
+
+  function reversal(type) {
+    switch (type) {
+      case "upDown":
+        for (let row = 0; row < N / 2; row++) {
+          for (let col = 0; col < M; col++) {
+            [input[row][col], input[N - 1 - row][col]] = [
+              input[N - 1 - row][col],
+              input[row][col],
+            ];
+          }
         }
-      }
-      break;
-    case leftRight:
-      for (let j = 0; j < M / 2; j++) {
-        for (let i = 0; i < N; i++) {
-          const tmp = arr[i][j];
-          arr[i][j] = arr[i][M - 1 - j];
-          arr[i][M - 1 - j] = tmp;
+        break;
+      case "leftRight":
+        for (let row = 0; row < N; row++) {
+          for (let col = 0; col < M / 2; col++) {
+            [input[row][col], input[row][M - 1 - col]] = [
+              input[row][M - 1 - col],
+              input[row][col],
+            ];
+          }
         }
-      }
-      break;
+        break;
+    }
   }
+
+  function rotate(type) {
+    let newBoard = Array.from({ length: M }, () => Array(N).fill(0));
+
+    switch (type) {
+      case "rotateRight":
+        for (let col = 0; col < M; col++) {
+          for (let row = 0; row < N; row++) {
+            newBoard[col][row] = input[N - row - 1][col];
+          }
+        }
+        break;
+      case "rotateLeft":
+        for (let col = 0; col < M; col++) {
+          for (let row = 0; row < N; row++) {
+            newBoard[col][row] = input[row][M - col - 1];
+          }
+        }
+        break;
+    }
+
+    [N, M] = [M, N];
+    input = newBoard;
+  }
+
+  function quaterRotate(type) {
+    switch (type) {
+      case "toRight":
+        for (let row = 0; row < N / 2; row++) {
+          for (let col = 0; col < M / 2; col++) {
+            const tempOne = input[row + N / 2][col];
+            const tempTwo = input[row][col + M / 2];
+            const tempThree = input[row + N / 2][col + M / 2];
+
+            input[row][col + M / 2] = input[row][col];
+            input[row + N / 2][col + M / 2] = tempTwo;
+            input[row + N / 2][col] = tempThree;
+            input[row][col] = tempOne;
+          }
+        }
+        break;
+      case "toLeft":
+        for (let row = 0; row < N / 2; row++) {
+          for (let col = 0; col < M / 2; col++) {
+            const tempTwo = input[row][col + M / 2];
+            const tempThree = input[row + N / 2][col + M / 2];
+            const tempFour = input[row + N / 2][col];
+
+            input[row + N / 2][col] = input[row][col];
+            input[row + N / 2][col + M / 2] = tempFour;
+            input[row][col + M / 2] = tempThree;
+            input[row][col] = tempTwo;
+          }
+        }
+        break;
+    }
+  }
+
+  for (let order of orders) {
+    switch (order) {
+      case 1:
+        reversal("upDown");
+        break;
+      case 2:
+        reversal("leftRight");
+        break;
+      case 3:
+        rotate("rotateRight");
+        break;
+      case 4:
+        rotate("rotateLeft");
+        break;
+      case 5:
+        quaterRotate("toRight");
+        break;
+      default:
+        quaterRotate("toLeft");
+        break;
+    }
+  }
+
+  return input.map((v) => v.join(" ")).join("\n");
 }
 
-function rotate(type) {
-  const rotateArr = new Array(M).fill(0).map(() => new Array(N).fill(0));
-  switch (type) {
-    case toLeft:
-      for (let i = 0; i < M; i++) {
-        for (let j = 0; j < N; j++) {
-          rotateArr[i][j] = arr[j][M - 1 - i];
-        }
-      }
-      break;
-    case toRight:
-      for (let i = 0; i < M; i++) {
-        for (let j = 0; j < N; j++) {
-          rotateArr[i][j] = arr[N - 1 - j][i];
-        }
-      }
-      break;
-  }
-  const tmp = N;
-  N = M;
-  M = tmp;
-  arr = rotateArr;
-}
-
-function quaterRotate(type) {
-  switch (type) {
-    case toLeft:
-      for (let i = 0; i < N / 2; i++) {
-        for (let j = 0; j < M / 2; j++) {
-          const tmp = arr[i][j];
-          arr[i][j] = arr[i][M / 2 + j];
-          arr[i][M / 2 + j] = arr[N / 2 + i][M / 2 + j];
-          arr[N / 2 + i][M / 2 + j] = arr[N / 2 + i][j];
-          arr[N / 2 + i][j] = tmp;
-        }
-      }
-      break;
-    case toRight:
-      for (let i = 0; i < N / 2; i++) {
-        for (let j = 0; j < M / 2; j++) {
-          const tmp = arr[i][j];
-          arr[i][j] = arr[N / 2 + i][j];
-          arr[N / 2 + i][j] = arr[N / 2 + i][M / 2 + j];
-          arr[N / 2 + i][M / 2 + j] = arr[i][M / 2 + j];
-          arr[i][M / 2 + j] = tmp;
-        }
-      }
-      break;
-  }
-}
-
-const input = require("fs")
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split("\n");
-
-let [N, M, R] = input[0].split(" ").map(Number);
-let arr = input.slice(1, 1 + N).map((el) => el.split(" ").map(Number));
-const insts = input[1 + N].split(" ").map(Number);
-const [upDown, leftRight, toLeft, toRight] = [0, 1, 2, 3];
-
-for (let i = 0; i < R; i++) {
-  const inst = insts[i];
-  switch (inst) {
-    case 1:
-      reversal(upDown);
-      break;
-    case 2:
-      reversal(leftRight);
-      break;
-    case 3:
-      rotate(toRight);
-      break;
-    case 4:
-      rotate(toLeft);
-      break;
-    case 5:
-      quaterRotate(toRight);
-      break;
-    case 6:
-      quaterRotate(toLeft);
-      break;
-  }
-}
-console.log(arr.map((el) => el.join(" ")).join("\n"));
+console.log(solution(input));
