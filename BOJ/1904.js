@@ -8,7 +8,7 @@ dy[1] = 1;
 dy[2] = 2;
 
 for (let i = 3; i <= input; i++) {
-  dy[i] = (dy[i - 2] + dy[i - 1]) % 15746;
+    dy[i] = (dy[i - 2] + dy[i - 1]) % 15746;
 }
 
 answer = dy[input];

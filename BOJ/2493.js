@@ -7,32 +7,32 @@ const stack = [];
 const answer = [];
 
 for (let i = 0; i < N; i++) {
-  const currentTower = {
-    index: i + 1,
-    height: Number(towers[i]),
-  };
+    const currentTower = {
+        index: i + 1,
+        height: Number(towers[i]),
+    };
 
-  if (!stack.length) {
-    stack.push(currentTower);
-    answer.push(0);
-    continue;
-  }
-
-  if (stack[stack.length - 1].height < currentTower.height) {
-    while (stack.length) {
-      if (stack[stack.length - 1].height > currentTower.height) {
-        break;
-      } else {
-        stack.pop();
-      }
+    if (!stack.length) {
+        stack.push(currentTower);
+        answer.push(0);
+        continue;
     }
 
-    !stack.length ? answer.push(0) : answer.push(stack[stack.length - 1].index);
-    stack.push(currentTower);
-  } else {
-    answer.push(stack[stack.length - 1].index);
-    stack.push(currentTower);
-  }
+    if (stack[stack.length - 1].height < currentTower.height) {
+        while (stack.length) {
+            if (stack[stack.length - 1].height > currentTower.height) {
+                break;
+            } else {
+                stack.pop();
+            }
+        }
+
+        !stack.length ? answer.push(0) : answer.push(stack[stack.length - 1].index);
+        stack.push(currentTower);
+    } else {
+        answer.push(stack[stack.length - 1].index);
+        stack.push(currentTower);
+    }
 }
 
 console.log(answer.join(" "));

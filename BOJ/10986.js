@@ -11,12 +11,12 @@ let answer = 0;
 result[0] = 1;
 
 for (let i = 0; i < N; i++) {
-  pSum += nums[i];
-  result[pSum % M] += 1;
+    pSum += nums[i];
+    result[pSum % M] += 1;
 }
 
 for (let x of result) {
-  answer += parseInt((x * (x - 1)) / 2);
+    answer += parseInt((x * (x - 1)) / 2);
 }
 
 console.log(answer);

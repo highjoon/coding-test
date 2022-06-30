@@ -14,31 +14,31 @@ DFS(0, []);
 console.log(answer);
 
 function DFS(L, teamStart) {
-  if (teamStart.length === halfN) {
-    let teamLink = players.filter((v) => !teamStart.includes(v));
-    getMinimumStat(teamStart, teamLink);
-    return;
-  } else {
-    for (let i = L; i < N; i++) {
-      if (ch[i] === 0) {
-        ch[i] = 1;
-        DFS(L + 1, [...teamStart, players[i]]);
-        ch[i] = 0;
-      }
+    if (teamStart.length === halfN) {
+        let teamLink = players.filter((v) => !teamStart.includes(v));
+        getMinimumStat(teamStart, teamLink);
+        return;
+    } else {
+        for (let i = L; i < N; i++) {
+            if (ch[i] === 0) {
+                ch[i] = 1;
+                DFS(L + 1, [...teamStart, players[i]]);
+                ch[i] = 0;
+            }
+        }
     }
-  }
 }
 
 function getMinimumStat(teamStart, teamLink) {
-  let stats1 = 0;
-  let stats2 = 0;
+    let stats1 = 0;
+    let stats2 = 0;
 
-  for (let i = 0; i < halfN; i++) {
-    for (let j = 0; j < halfN; j++) {
-      stats1 += input[teamStart[i]][teamStart[j]];
-      stats2 += input[teamLink[i]][teamLink[j]];
+    for (let i = 0; i < halfN; i++) {
+        for (let j = 0; j < halfN; j++) {
+            stats1 += input[teamStart[i]][teamStart[j]];
+            stats2 += input[teamLink[i]][teamLink[j]];
+        }
     }
-  }
 
-  return (answer = Math.min(answer, Math.abs(stats1 - stats2)));
+    return (answer = Math.min(answer, Math.abs(stats1 - stats2)));
 }

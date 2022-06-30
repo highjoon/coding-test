@@ -8,11 +8,11 @@ let obj = {};
 let answer = [];
 
 set.forEach((item, idx) => {
-  obj[item] = idx;
+    obj[item] = idx;
 });
 
 for (let i = 0; i < arr.length; i++) {
-  answer.push(obj[arr[i]]);
+    answer.push(obj[arr[i]]);
 }
 
 console.log(answer.join(" "));

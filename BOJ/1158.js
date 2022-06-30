@@ -8,15 +8,15 @@ const array = Array.from({ length: N }, (v, i) => i + 1);
 let result = "<";
 
 while (array.length) {
-  for (let i = 0; i < K; i++) {
-    array.push(array.shift());
-  }
+    for (let i = 0; i < K; i++) {
+        array.push(array.shift());
+    }
 
-  if (array.length === 1) {
-    result += `${array.pop()}>`;
-  } else {
-    result += `${array.pop()}, `;
-  }
+    if (array.length === 1) {
+        result += `${array.pop()}>`;
+    } else {
+        result += `${array.pop()}, `;
+    }
 }
 
 console.log(result);

@@ -8,14 +8,14 @@ let answer;
 let sum = 0;
 
 for (let i = 0; i < K; i++) {
-  sum += arr[i];
+    sum += arr[i];
 }
 
 answer = sum;
 
 for (let i = K; i < N; i++) {
-  sum += arr[i] - arr[i - K];
-  answer = Math.max(answer, sum);
+    sum += arr[i] - arr[i - K];
+    answer = Math.max(answer, sum);
 }
 
 console.log(answer);

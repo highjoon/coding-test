@@ -8,27 +8,27 @@ let primeSum = 0;
 let primeArr = [];
 
 function primeNum(num, arr) {
-  if (num < 2) {
-    return;
-  }
-
-  for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-      return;
+    if (num < 2) {
+        return;
     }
-  }
 
-  arr.push(num);
-  primeSum += num;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return;
+        }
+    }
+
+    arr.push(num);
+    primeSum += num;
 }
 
 for (let i = M; i <= N; i++) {
-  primeNum(i, primeArr);
+    primeNum(i, primeArr);
 }
 
 if (!primeArr.length) {
-  console.log(-1);
+    console.log(-1);
 } else {
-  console.log(primeSum);
-  console.log(Math.min(...primeArr));
+    console.log(primeSum);
+    console.log(Math.min(...primeArr));
 }

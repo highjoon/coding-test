@@ -12,14 +12,14 @@ let endSum;
 let cumulativeSum = [nums[0]];
 
 for (let i = 1; i < N; i++) {
-  cumulativeSum[i] = cumulativeSum[i - 1] + nums[i];
+    cumulativeSum[i] = cumulativeSum[i - 1] + nums[i];
 }
 
 for (let section of input) {
-  [startIndex, endIndex] = section.split(" ").map(Number);
-  endSum = cumulativeSum[endIndex - 1];
-  startSum = startIndex - 2 >= 0 ? cumulativeSum[startIndex - 2] : 0;
-  answer.push(endSum - startSum);
+    [startIndex, endIndex] = section.split(" ").map(Number);
+    endSum = cumulativeSum[endIndex - 1];
+    startSum = startIndex - 2 >= 0 ? cumulativeSum[startIndex - 2] : 0;
+    answer.push(endSum - startSum);
 }
 
 console.log(answer.join("\n"));

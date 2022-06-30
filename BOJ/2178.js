@@ -15,19 +15,19 @@ queue.push([0, 0]);
 ch[0][0] = 1;
 
 while (queue.length) {
-  let [x, y] = queue.shift();
+    let [x, y] = queue.shift();
 
-  for (let i = 0; i < dx.length; i++) {
-    const nx = x + dx[i];
-    const ny = y + dy[i];
+    for (let i = 0; i < dx.length; i++) {
+        const nx = x + dx[i];
+        const ny = y + dy[i];
 
-    if (nx >= 0 && nx < M && ny >= 0 && ny < N) {
-      if (ch[ny][nx] === 0 && input[ny][nx] === 1) {
-        ch[ny][nx] = ch[y][x] + 1;
-        queue.push([nx, ny]);
-      }
+        if (nx >= 0 && nx < M && ny >= 0 && ny < N) {
+            if (ch[ny][nx] === 0 && input[ny][nx] === 1) {
+                ch[ny][nx] = ch[y][x] + 1;
+                queue.push([nx, ny]);
+            }
+        }
     }
-  }
 }
 
 answer = ch[N - 1][M - 1];

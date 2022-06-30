@@ -8,19 +8,19 @@ let max = Number.MIN_SAFE_INTEGER;
 let answer = 0;
 
 for (let i = 0; i < N; i++) {
-  let first = cards[i];
-  for (let j = i + 1; j < N; j++) {
-    let second = cards[j];
-    for (let k = j + 1; k < N; k++) {
-      let third = cards[k];
-      let sum = first + second + third;
+    let first = cards[i];
+    for (let j = i + 1; j < N; j++) {
+        let second = cards[j];
+        for (let k = j + 1; k < N; k++) {
+            let third = cards[k];
+            let sum = first + second + third;
 
-      if (sum <= M && sum > max) {
-        max = sum;
-        answer = sum;
-      }
+            if (sum <= M && sum > max) {
+                max = sum;
+                answer = sum;
+            }
+        }
     }
-  }
 }
 
 console.log(answer);

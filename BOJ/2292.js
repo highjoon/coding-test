@@ -7,8 +7,8 @@ let cnt = 1;
 let sum = 1;
 
 while (sum < N) {
-  sum += 6 * cnt;
-  cnt++;
+    sum += 6 * cnt;
+    cnt++;
 }
 
 console.log(cnt);

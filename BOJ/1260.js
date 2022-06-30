@@ -12,37 +12,37 @@ let routeBFS = [];
 let answer = [];
 
 for (let [a, b] of input) {
-  graph[a][b] = 1;
-  graph[b][a] = 1;
+    graph[a][b] = 1;
+    graph[b][a] = 1;
 }
 
 function DFS(v) {
-  chDFS[v] = 1;
-  routeDFS.push(v);
-  for (let i = 1; i < graph.length; i++) {
-    if (graph[v][i] === 1 && chDFS[i] === 0) {
-      DFS(i);
+    chDFS[v] = 1;
+    routeDFS.push(v);
+    for (let i = 1; i < graph.length; i++) {
+        if (graph[v][i] === 1 && chDFS[i] === 0) {
+            DFS(i);
+        }
     }
-  }
 }
 
 function BFS(v) {
-  const queue = [];
-  queue.push(v);
-  routeBFS.push(v);
+    const queue = [];
+    queue.push(v);
+    routeBFS.push(v);
 
-  while (queue.length) {
-    let nv = queue.shift();
-    chBFS[nv] = 1;
-    for (let i = 1; i < graph.length; i++) {
-      if (graph[nv][i] === 1 && chBFS[i] === 0) {
-        chBFS[i] = 1;
-        queue.push(i);
-        routeBFS.push(i);
-      }
+    while (queue.length) {
+        let nv = queue.shift();
+        chBFS[nv] = 1;
+        for (let i = 1; i < graph.length; i++) {
+            if (graph[nv][i] === 1 && chBFS[i] === 0) {
+                chBFS[i] = 1;
+                queue.push(i);
+                routeBFS.push(i);
+            }
+        }
     }
-  }
-  return;
+    return;
 }
 
 DFS(V);

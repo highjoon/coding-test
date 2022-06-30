@@ -5,10 +5,10 @@ let N = Number(input);
 let title = 665;
 
 while (N) {
-  title++;
-  if (String(title).includes("666")) {
-    N--;
-  }
+    title++;
+    if (String(title).includes("666")) {
+        N--;
+    }
 }
 
 console.log(title);

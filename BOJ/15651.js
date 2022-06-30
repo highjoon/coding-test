@@ -8,14 +8,14 @@ let answer = [];
 let temp = Array.from({ length: M }, () => 0);
 
 function DFS(L) {
-  if (L === M) {
-    answer.push(temp.slice().join(" "));
-  } else {
-    for (let i = 1; i <= N; i++) {
-      temp[L] = i;
-      DFS(L + 1);
+    if (L === M) {
+        answer.push(temp.slice().join(" "));
+    } else {
+        for (let i = 1; i <= N; i++) {
+            temp[L] = i;
+            DFS(L + 1);
+        }
     }
-  }
 }
 
 DFS(0);

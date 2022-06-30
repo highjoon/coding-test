@@ -7,10 +7,10 @@ input = input.map(Number).sort((a, b) => b - a);
 let answer = 0;
 
 for (let coin of input) {
-  if (K === 0) break;
-  if (K - coin < 0) continue;
-  answer += parseInt(K / coin);
-  K %= coin;
+    if (K === 0) break;
+    if (K - coin < 0) continue;
+    answer += parseInt(K / coin);
+    K %= coin;
 }
 
 console.log(answer);

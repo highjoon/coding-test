@@ -5,9 +5,9 @@ const words = input.split(" ");
 let cnt = 0;
 
 for (let word of words) {
-  if (word) {
-    cnt++;
-  }
+    if (word) {
+        cnt++;
+    }
 }
 
 console.log(cnt);

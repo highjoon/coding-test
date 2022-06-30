@@ -5,13 +5,13 @@ const stack = [];
 let answer = 0;
 
 for (let braket of input) {
-  if (!stack.length && braket === ")") {
-    answer++;
-  } else if (stack[stack.length - 1] === "(" && braket === ")") {
-    stack.pop();
-  } else {
-    stack.push(braket);
-  }
+    if (!stack.length && braket === ")") {
+        answer++;
+    } else if (stack[stack.length - 1] === "(" && braket === ")") {
+        stack.pop();
+    } else {
+        stack.push(braket);
+    }
 }
 
 answer += stack.length;

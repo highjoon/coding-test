@@ -7,8 +7,8 @@ let C = Number(input.shift());
 B += C;
 
 while (B >= 60) {
-  B -= 60;
-  A += 1;
+    B -= 60;
+    A += 1;
 }
 
 A %= 24;

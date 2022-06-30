@@ -6,23 +6,23 @@ let stack = [];
 let sum;
 
 for (let form of input) {
-  if (!isNaN(Number(form))) {
-    stack.push(Number(form));
-  } else {
-    sum = form
-      .split("+")
-      .map(Number)
-      .reduce((a, b) => a + b, 0);
-    stack.push(sum);
-  }
+    if (!isNaN(Number(form))) {
+        stack.push(Number(form));
+    } else {
+        sum = form
+            .split("+")
+            .map(Number)
+            .reduce((a, b) => a + b, 0);
+        stack.push(sum);
+    }
 }
 
 stack = stack.reverse();
 
 while (stack.length !== 1) {
-  let A = stack.pop();
-  let B = stack.pop();
-  stack.push(A - B);
+    let A = stack.pop();
+    let B = stack.pop();
+    stack.push(A - B);
 }
 
 answer = stack[0];

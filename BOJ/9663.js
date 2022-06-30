@@ -7,25 +7,25 @@ let answer = 0;
 let row = Array.from({ length: N + 1 }, () => 0);
 
 function check(L) {
-  for (let i = 0; i < L; i++) {
-    if (row[L] === row[i] || L - i === Math.abs(row[L] - row[i])) {
-      return false;
+    for (let i = 0; i < L; i++) {
+        if (row[L] === row[i] || L - i === Math.abs(row[L] - row[i])) {
+            return false;
+        }
     }
-  }
-  return true;
+    return true;
 }
 
 function DFS(L) {
-  if (L === N) {
-    answer++;
-  } else {
-    for (let i = 0; i < N; i++) {
-      row[L] = i;
-      if (check(L)) {
-        DFS(L + 1);
-      }
+    if (L === N) {
+        answer++;
+    } else {
+        for (let i = 0; i < N; i++) {
+            row[L] = i;
+            if (check(L)) {
+                DFS(L + 1);
+            }
+        }
     }
-  }
 }
 
 DFS(0);

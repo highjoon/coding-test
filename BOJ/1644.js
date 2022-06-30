@@ -5,29 +5,29 @@ const N = Number(input);
 let primes = [];
 
 function eratosthenesSieve(array, number) {
-  let tempArray = [];
+    let tempArray = [];
 
-  for (let i = 2; i <= number; i++) {
-    tempArray[i] = i;
-  }
-
-  for (let i = 2; i <= number; i++) {
-    if (tempArray[i] === 0) {
-      continue;
+    for (let i = 2; i <= number; i++) {
+        tempArray[i] = i;
     }
 
-    for (let j = i + i; j <= number; j += i) {
-      tempArray[j] = 0;
-    }
-  }
+    for (let i = 2; i <= number; i++) {
+        if (tempArray[i] === 0) {
+            continue;
+        }
 
-  for (let i = 2; i <= number; i++) {
-    if (tempArray[i] !== 0) {
-      array.push(tempArray[i]);
+        for (let j = i + i; j <= number; j += i) {
+            tempArray[j] = 0;
+        }
     }
-  }
 
-  return array;
+    for (let i = 2; i <= number; i++) {
+        if (tempArray[i] !== 0) {
+            array.push(tempArray[i]);
+        }
+    }
+
+    return array;
 }
 
 eratosthenesSieve(primes, N);
@@ -38,18 +38,18 @@ let sum = primes[left];
 let answer = 0;
 
 while (left < primes.length && right < primes.length) {
-  if (sum === N) {
-    answer++;
-    sum += primes[right++];
-  } else if (sum > N) {
-    sum -= primes[left++];
-  } else {
-    sum += primes[right++];
-  }
+    if (sum === N) {
+        answer++;
+        sum += primes[right++];
+    } else if (sum > N) {
+        sum -= primes[left++];
+    } else {
+        sum += primes[right++];
+    }
 }
 
 if (primes[primes.length - 1] === N) {
-  answer++;
+    answer++;
 }
 
 console.log(answer);

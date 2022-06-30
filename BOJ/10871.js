@@ -7,9 +7,9 @@ const arr = input[1].split(" ").map((v) => Number(v));
 let result = "";
 
 for (let i = 0; i < N; i++) {
-  if (arr[i] < X) {
-    result += `${arr[i]} `;
-  }
+    if (arr[i] < X) {
+        result += `${arr[i]} `;
+    }
 }
 
 console.log(result);

@@ -10,41 +10,41 @@ const C = [];
 const [N, M] = input.shift();
 
 for (let i = 0; i < N; i++) {
-  A.push(input.shift());
+    A.push(input.shift());
 }
 
 const [K, L] = input.shift();
 
 for (let i = 0; i < K; i++) {
-  B.push(input.shift());
+    B.push(input.shift());
 }
 
 while (B[0].length > 0) {
-  const temp = [];
+    const temp = [];
 
-  for (let i = 0; i < K; i++) {
-    temp.push(B[i].shift());
-  }
+    for (let i = 0; i < K; i++) {
+        temp.push(B[i].shift());
+    }
 
-  C.push(temp);
+    C.push(temp);
 }
 
 const answer = [];
 
 for (let i = 0; i < N; i++) {
-  answer.push([]);
-  const X = A[i];
+    answer.push([]);
+    const X = A[i];
 
-  for (let j = 0; j < L; j++) {
-    let sum = 0;
-    const Y = C[j];
+    for (let j = 0; j < L; j++) {
+        let sum = 0;
+        const Y = C[j];
 
-    for (let k = 0; k < K; k++) {
-      sum += X[k] * Y[k];
+        for (let k = 0; k < K; k++) {
+            sum += X[k] * Y[k];
+        }
+
+        answer[answer.length - 1].push(sum);
     }
-
-    answer[answer.length - 1].push(sum);
-  }
 }
 
 console.log(answer.map((v) => v.join(" ")).join("\n"));

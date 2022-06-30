@@ -7,14 +7,14 @@ let cnt = 0;
 let sum = 0;
 
 while (true) {
-  cnt++;
+    cnt++;
 
-  sum = Math.floor(N / 10) + (N % 10);
-  N = (N % 10) * 10 + (sum % 10);
+    sum = Math.floor(N / 10) + (N % 10);
+    N = (N % 10) * 10 + (sum % 10);
 
-  if (tempN === N) {
-    break;
-  }
+    if (tempN === N) {
+        break;
+    }
 }
 
 console.log(cnt);

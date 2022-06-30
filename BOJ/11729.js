@@ -6,14 +6,14 @@ const answer = [];
 let cnt = 0;
 
 function hanoiTower(num, from, other, to) {
-  if (num === 0) {
-    return;
-  } else {
-    hanoiTower(num - 1, from, to, other);
-    answer.push([from, to]);
-    cnt++;
-    hanoiTower(num - 1, other, from, to);
-  }
+    if (num === 0) {
+        return;
+    } else {
+        hanoiTower(num - 1, from, to, other);
+        answer.push([from, to]);
+        cnt++;
+        hanoiTower(num - 1, other, from, to);
+    }
 }
 
 hanoiTower(N, "1", "2", "3");

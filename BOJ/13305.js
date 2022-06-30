@@ -9,8 +9,8 @@ let total = 0n;
 let minimumCost = cost[0];
 
 for (let i = 0; i < distance.length; i++) {
-  if (cost[i] <= minimumCost) minimumCost = cost[i];
-  total += minimumCost * distance[i];
+    if (cost[i] <= minimumCost) minimumCost = cost[i];
+    total += minimumCost * distance[i];
 }
 
 console.log(total.toString());

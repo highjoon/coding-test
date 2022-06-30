@@ -7,7 +7,7 @@ const Barr = input[1].split("").map((v) => Number(v));
 const result = [];
 
 for (let x of Barr) {
-  result.push(x * A);
+    result.push(x * A);
 }
 
 result.reverse();

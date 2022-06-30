@@ -9,15 +9,15 @@ let cnt = 0;
 let answer = "<";
 
 while (queue.length) {
-  for (let i = 0; i < K - 1; i++) {
-    queue.push(queue.shift());
-  }
+    for (let i = 0; i < K - 1; i++) {
+        queue.push(queue.shift());
+    }
 
-  if (queue.length === 1) {
-    answer += `${queue.shift()}>`;
-  } else {
-    answer += `${queue.shift()}, `;
-  }
+    if (queue.length === 1) {
+        answer += `${queue.shift()}>`;
+    } else {
+        answer += `${queue.shift()}, `;
+    }
 }
 
 console.log(answer);

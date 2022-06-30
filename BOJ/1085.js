@@ -1,10 +1,10 @@
 const fs = require("fs");
 const input = fs
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split(" ")
-  .map((num) => parseInt(num));
+    .readFileSync("/dev/stdin")
+    .toString()
+    .trim()
+    .split(" ")
+    .map((num) => parseInt(num));
 
 const x = input[0];
 const y = input[1];

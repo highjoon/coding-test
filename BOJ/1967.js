@@ -10,20 +10,20 @@ let max = { node: null, dist: Number.MIN_SAFE_INTEGER };
 let answer = 0;
 
 for (let x of input) {
-  const [start, end, dist] = x;
-  graph[start].push([end, dist]);
-  graph[end].push([start, dist]);
+    const [start, end, dist] = x;
+    graph[start].push([end, dist]);
+    graph[end].push([start, dist]);
 }
 
 function DFS(node, dist) {
-  if (dist > max.dist) max = { node, dist };
-  for (let i = 0; i < graph[node].length; i++) {
-    const [nextNode, nextDist] = graph[node][i];
-    if (ch[nextNode] === 0) {
-      ch[nextNode] = 1;
-      DFS(nextNode, dist + nextDist);
+    if (dist > max.dist) max = { node, dist };
+    for (let i = 0; i < graph[node].length; i++) {
+        const [nextNode, nextDist] = graph[node][i];
+        if (ch[nextNode] === 0) {
+            ch[nextNode] = 1;
+            DFS(nextNode, dist + nextDist);
+        }
     }
-  }
 }
 
 ch[1] = 1;
