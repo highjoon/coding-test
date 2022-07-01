@@ -11,14 +11,30 @@ function solution(input) {
     const dx = [1, 0, -1, 0];
     const dy = [0, 1, 0, -1];
 
-    function countDust() {
+    // 미세먼지 확산
+    function spreadDust() {
+        let spreadList = [];
         for (let row = 0; row < R; row++) {
             for (let col = 0; col < C; col++) {
-                if (input[row][col] > 0) answer += input[row][col];
+                if (input[row][col] > 0) {
+                    const value = Math.floor(input[row][col] / 5);
+                    for (let i = 0; i < 4; i++) {
+                        const [nRow, nCol] = [row + dx[i], col + dy[i]];
+                        if (nRow < 0 || nRow >= R || nCol < 0 || nCol >= C || input[nRow][nCol] === -1) continue;
+                        spreadList.push([nRow, nCol, value]);
+                        input[row][col] -= value;
+                    }
+                }
             }
+        }
+
+        for (let spread of spreadList) {
+            const [row, col, value] = spread;
+            input[row][col] += value;
         }
     }
 
+    // 위쪽 공기청정기 순환 (반시계방향)
     function rotateUp(cleanerRow) {
         for (let row = cleanerRow - 2; row >= 0; row--) {
             input[row + 1][0] = input[row][0];
@@ -39,6 +55,7 @@ function solution(input) {
         input[cleanerRow][1] = 0;
     }
 
+    // 아래쪽 공기청정기 순환 (시계방향)
     function rotateDown(cleanerRow) {
         for (let row = cleanerRow + 2; row < R; row++) {
             input[row - 1][0] = input[row][0];
@@ -59,6 +76,18 @@ function solution(input) {
         input[cleanerRow][1] = 0;
     }
 
+    // 남아있는 미세먼지 양 계산
+    function countDust() {
+        let result = 0;
+        for (let row = 0; row < R; row++) {
+            for (let col = 0; col < C; col++) {
+                if (input[row][col] > 0) result += input[row][col];
+            }
+        }
+        return result;
+    }
+
+    // 공기 청정기 위치 찾기
     for (let row = 0; row < R; row++) {
         for (let col = 0; col < C; col++) {
             if (input[row][col] === -1) {
@@ -71,32 +100,14 @@ function solution(input) {
         if (flag) break;
     }
 
+    // T 만큼 진행 (확산 -> 위쪽 순환 -> 아래쪽 순환)
     while (T--) {
-        let spreadList = [];
-        for (let row = 0; row < R; row++) {
-            for (let col = 0; col < C; col++) {
-                if (input[row][col] > 0) {
-                    const value = Math.floor(input[row][col] / 5);
-                    for (let i = 0; i < 4; i++) {
-                        const [nRow, nCol] = [row + dx[i], col + dy[i]];
-                        if (nRow < 0 || nRow >= R || nCol < 0 || nCol >= C || input[nRow][nCol] === -1) continue;
-                        spreadList.push([nRow, nCol, value]);
-                        input[row][col] -= value;
-                    }
-                }
-            }
-        }
-
-        for (let spread of spreadList) {
-            const [row, col, value] = spread;
-            input[row][col] += value;
-        }
-
+        spreadDust();
         rotateUp(upperCleaner);
         rotateDown(lowerCleaner);
     }
 
-    countDust();
+    answer = countDust();
     return answer;
 }
 
