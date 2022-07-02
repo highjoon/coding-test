@@ -1,12 +1,12 @@
 function solution(n) {
-  let answer = 0;
-  for (let i = 2; i < n; i++) {
-    if (n % i === 1) {
-      answer = i;
-      break;
+    let answer = 0;
+    for (let i = 2; i < n; i++) {
+        if (n % i === 1) {
+            answer = i;
+            break;
+        }
     }
-  }
-  return answer;
+    return answer;
 }
 
 console.log(solution(10));

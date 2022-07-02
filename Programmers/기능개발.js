@@ -1,20 +1,20 @@
 function solution(progresses, speeds) {
-  let answer = [];
-  while (progresses.length) {
-    for (let i = 0; i < progresses.length; i++) {
-      progresses[i] = progresses[i] += speeds[i];
+    let answer = [];
+    while (progresses.length) {
+        for (let i = 0; i < progresses.length; i++) {
+            progresses[i] = progresses[i] += speeds[i];
+        }
+        if (progresses[0] >= 100) {
+            let completed = 0;
+            while (progresses[0] >= 100) {
+                progresses.shift();
+                speeds.shift();
+                completed++;
+            }
+            answer.push(completed);
+        }
     }
-    if (progresses[0] >= 100) {
-      let completed = 0;
-      while (progresses[0] >= 100) {
-        progresses.shift();
-        speeds.shift();
-        completed++;
-      }
-      answer.push(completed);
-    }
-  }
-  return answer;
+    return answer;
 }
 
 console.log(solution([93, 30, 55], [1, 30, 5]));

@@ -1,24 +1,24 @@
 function solution(people, limit) {
-  people = people.sort((a, b) => a - b);
-  let answer = 0;
-  let lt = 0;
-  let rt = people.length - 1;
-  let boardNum = 0;
-  let peopleNum = people.length;
+    people = people.sort((a, b) => a - b);
+    let answer = 0;
+    let lt = 0;
+    let rt = people.length - 1;
+    let boardNum = 0;
+    let peopleNum = people.length;
 
-  while (lt < rt) {
-    let sum = people[lt] + people[rt];
-    if (sum <= limit) {
-      answer++;
-      boardNum += 2;
-      lt++;
-      rt--;
-    } else if (sum > limit) {
-      rt--;
+    while (lt < rt) {
+        let sum = people[lt] + people[rt];
+        if (sum <= limit) {
+            answer++;
+            boardNum += 2;
+            lt++;
+            rt--;
+        } else if (sum > limit) {
+            rt--;
+        }
     }
-  }
-  answer += peopleNum - boardNum;
-  return answer;
+    answer += peopleNum - boardNum;
+    return answer;
 }
 
 let p1 = [70, 50, 80, 50];

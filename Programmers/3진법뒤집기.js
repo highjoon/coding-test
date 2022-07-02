@@ -1,21 +1,21 @@
 function solution(n) {
-  let answer = 0;
-  let temp = [];
+    let answer = 0;
+    let temp = [];
 
-  function DFS(num) {
-    if (num === 0) return;
-    DFS(parseInt(num / 3));
-    temp.push(num % 3);
-  }
+    function DFS(num) {
+        if (num === 0) return;
+        DFS(parseInt(num / 3));
+        temp.push(num % 3);
+    }
 
-  DFS(n);
-  temp = temp.reverse().join("");
+    DFS(n);
+    temp = temp.reverse().join("");
 
-  for (let i = 0; i < temp.length; i++) {
-    answer += temp[i] * Math.pow(3, temp.length - i - 1);
-  }
+    for (let i = 0; i < temp.length; i++) {
+        answer += temp[i] * Math.pow(3, temp.length - i - 1);
+    }
 
-  return answer;
+    return answer;
 }
 
 console.log(solution(45));

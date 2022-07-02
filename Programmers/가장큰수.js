@@ -1,10 +1,10 @@
 function solution(numbers) {
-  let answer = numbers
-    .map((v) => v.toString())
-    .sort((a, b) => b + a - (a + b))
-    .join("");
-  if (answer[0] === "0") return "0";
-  return answer;
+    let answer = numbers
+        .map((v) => v.toString())
+        .sort((a, b) => b + a - (a + b))
+        .join("");
+    if (answer[0] === "0") return "0";
+    return answer;
 }
 
 let n1 = [6, 10, 2];

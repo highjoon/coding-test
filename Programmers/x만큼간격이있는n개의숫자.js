@@ -1,6 +1,6 @@
 function solution(x, n) {
-  const answer = Array.from({ length: n }, () => x).map((v, i) => (v += i * x));
-  return answer;
+    const answer = Array.from({ length: n }, () => x).map((v, i) => (v += i * x));
+    return answer;
 }
 
 console.log(solution(2, 5));

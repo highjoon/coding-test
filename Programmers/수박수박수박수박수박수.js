@@ -1,12 +1,12 @@
 function solution(n) {
-  let answer = "";
-  let word = "수박";
+    let answer = "";
+    let word = "수박";
 
-  for (let i = 0; i < n; i++) {
-    answer += word[i % 2];
-  }
+    for (let i = 0; i < n; i++) {
+        answer += word[i % 2];
+    }
 
-  return answer;
+    return answer;
 }
 
 console.log(solution(3));

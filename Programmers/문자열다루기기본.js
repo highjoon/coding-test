@@ -1,15 +1,15 @@
 function solution(s) {
-  const answer = true;
-  if (s.length === 4 || s.length === 6) {
-    for (let x of s) {
-      if (isNaN(Number(x))) {
+    const answer = true;
+    if (s.length === 4 || s.length === 6) {
+        for (let x of s) {
+            if (isNaN(Number(x))) {
+                return false;
+            }
+        }
+    } else {
         return false;
-      }
     }
-  } else {
-    return false;
-  }
-  return answer;
+    return answer;
 }
 
 console.log(solution("a234"));

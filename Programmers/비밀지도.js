@@ -1,52 +1,52 @@
 function getBinary(n, num) {
-  let result = [];
+    let result = [];
 
-  function DFS(L) {
-    if (L === 0) return;
-    else {
-      DFS(parseInt(L / 2));
-      result.push((L % 2).toString());
+    function DFS(L) {
+        if (L === 0) return;
+        else {
+            DFS(parseInt(L / 2));
+            result.push((L % 2).toString());
+        }
     }
-  }
 
-  DFS(num);
+    DFS(num);
 
-  if (result.length < n) {
-    result = result.reverse();
-    let tmp = n - result.length;
-    for (let i = 1; i <= tmp; i++) {
-      result.push("0");
+    if (result.length < n) {
+        result = result.reverse();
+        let tmp = n - result.length;
+        for (let i = 1; i <= tmp; i++) {
+            result.push("0");
+        }
+        result = result.reverse();
     }
-    result = result.reverse();
-  }
 
-  return result.join("");
+    return result.join("");
 }
 
 function solution(n, arr1, arr2) {
-  const answer = [];
-  let decodedArr1 = [];
-  let decodedArr2 = [];
-  let temp = "";
+    const answer = [];
+    let decodedArr1 = [];
+    let decodedArr2 = [];
+    let temp = "";
 
-  for (let i = 0; i < n; i++) {
-    decodedArr1.push(getBinary(n, arr1[i]));
-    decodedArr2.push(getBinary(n, arr2[i]));
-  }
-
-  for (let i = 0; i < n; i++) {
-    temp = "";
-    for (let j = 0; j < n; j++) {
-      if (decodedArr1[i][j] === "1" || decodedArr2[i][j] === "1") {
-        temp += "#";
-      } else {
-        temp += " ";
-      }
+    for (let i = 0; i < n; i++) {
+        decodedArr1.push(getBinary(n, arr1[i]));
+        decodedArr2.push(getBinary(n, arr2[i]));
     }
-    answer.push(temp);
-  }
 
-  return answer;
+    for (let i = 0; i < n; i++) {
+        temp = "";
+        for (let j = 0; j < n; j++) {
+            if (decodedArr1[i][j] === "1" || decodedArr2[i][j] === "1") {
+                temp += "#";
+            } else {
+                temp += " ";
+            }
+        }
+        answer.push(temp);
+    }
+
+    return answer;
 }
 
 console.log(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]));
