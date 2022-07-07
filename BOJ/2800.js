@@ -17,17 +17,17 @@ function getCombinations(arr, selectNumber) {
 
 function solution(input) {
     input = input.split("");
-    const li = [];
+    const brackets = [];
     const stack = [];
     const answer = new Set();
 
     for (let i = 0; i < input.length; i++) {
         if (input[i] === "(") stack.push(i);
-        else if (input[i] === ")") li.push([stack.pop(), i]);
+        else if (input[i] === ")") brackets.push([stack.pop(), i]);
     }
 
-    for (let i = 0; i < li.length + 1; i++) {
-        const combinations = getCombinations(li, i);
+    for (let i = 0; i < brackets.length + 1; i++) {
+        const combinations = getCombinations(brackets, i);
 
         for (let combination of combinations) {
             let temp = input.slice();
